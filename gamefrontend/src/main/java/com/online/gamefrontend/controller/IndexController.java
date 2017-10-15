@@ -25,9 +25,9 @@ public class IndexController {
 		
 		return mv;
 	}
-	@RequestMapping(value="/login", method=RequestMethod.GET)
+	@RequestMapping(value="/login.jsp", method=RequestMethod.GET)
 	public ModelAndView login(){
-		ModelAndView mv=new ModelAndView("login");
+		ModelAndView mv=new ModelAndView("login.jsp");
 		return mv;
 	}
 }
