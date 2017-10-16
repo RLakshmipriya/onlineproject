@@ -15,7 +15,7 @@ public class IndexController {
 	private CustomerDao customerDao;
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView index(){
-		ModelAndView mv=new ModelAndView("index");
+		ModelAndView mv=new ModelAndView("home");
 /*		CustomerModel customer=new CustomerModel();
 		customer.setName("priya");
 		customer.setContact(987654321);
@@ -25,10 +25,10 @@ public class IndexController {
 		
 		return mv;
 	}
-	@RequestMapping(value="/login.jsp", method=RequestMethod.GET)
+	/*@RequestMapping(value="/login", method=RequestMethod.GET)
 	public ModelAndView login(){
-		ModelAndView mv=new ModelAndView("login.jsp");
+		ModelAndView mv=new ModelAndView("login");
 		return mv;
-	}
+	}*/
 }
 

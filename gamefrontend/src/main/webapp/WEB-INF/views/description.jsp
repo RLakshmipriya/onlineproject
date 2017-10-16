@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%@include file=header.jsp %>
+<%@include file="header.jsp" %>
 <body>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -15,12 +15,12 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="basket.jsp">Basket</a></li>
+        <li><a href="basket">Basket</a></li>
         
         <li><a href="register.jsp">Register</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
@@ -62,7 +62,7 @@
     </tbody>
   </table>
 </div>
-<a> href="usrhome.jsp"<button type="button" class="btn btn-success">Add to Basket</button></a>
-<%@include file=footer.jsp %>
+<a href="usrhome"type="button" class="btn btn-success">Add to Basket</a>
+<%@include file="footer.jsp" %>
 </body>
 </html>

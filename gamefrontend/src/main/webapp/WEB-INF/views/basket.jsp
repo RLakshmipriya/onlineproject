@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<%@include file=header.jsp %>
+<%@include file="header.jsp"%>
 <body>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="home.jsp">Home</a>
+      <a class="navbar-brand" href="home">Home</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Basket</a></li>
-      <li><a href="home.jsp">Logout</a></li>
+      <li><a href="home">Logout</a></li>
     </ul>
   </div>
 </nav>
   <div class="jumbotron">
   <h3>Basket</h3>
- <a href="products.jsp"><button type="button" class="btn btn-success">Continue Shopping</button></a>
+ <a href="products"><button type="button" class="btn btn-success">Continue Shopping</button></a>
 </div>
 <p>currently your basket contain truly awesome items(s).</p>
-</div>
+
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-10 col-md-offset-1">
@@ -88,7 +88,7 @@
                         <td>   </td>
                         <td>   </td>
                         <td>
-                         <a href="home.jsp" type="button" class="btn btn-success">
+                         <a href="home" type="button" class="btn btn-success">
                             <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping</a>
                         </td>
                         <td>
@@ -101,6 +101,6 @@
         </div>
     </div>
 </div>
-<%@include file=footer.jsp %>
+<%@include file="footer.jsp" %>
 </body>
 </html>

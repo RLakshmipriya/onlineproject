@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%@include file=header.jsp %>
+<%@include file="header.jsp" %>
 <body>
 
 <nav class="navbar navbar-inverse">
@@ -78,7 +78,7 @@
             <div class="col-sm-offset-2 col-sm-10">
               <div class="pull-right">
                 <button type="submit" class="btn btn-default">Cancel</button>
-                <a> href="home.jsp"<button type="submit" class="btn btn-primary">Save</button></a>
+                <a href="home" type="submit" class="btn btn-primary">Save</a>
               </div>
             </div>
           </div>
@@ -87,6 +87,6 @@
       </form>
     </div><!-- /.col-lg-12 -->
 </div><!-- /.row -->
-<%@include file=footer.jsp %>
+<%@include file="footer.jsp"%>
 </body>
 </html>

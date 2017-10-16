@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<%@include file=header.jsp %>
+<%@include file="header.jsp" %>
 <body>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -14,8 +13,8 @@
       
       </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      <li><a href="register.jsp"><span class="glyphicon glyphicon-register"></span> Register</a></li>
+      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="register"><span class="glyphicon glyphicon-register"></span> Register</a></li>
     </ul>
   </div>
 </nav>
@@ -33,32 +32,32 @@
     <th>Price</th>
   </tr>
   <tr>
-  <td> <a href="description.jsp">dead space 3 limited edition</td>
-    <td>20.00</td></a>
+  <td> <a href="description">dead space 3 limited edition</a></td>
+    <td>20.00</td>
   </tr>
   <tr>
-    <td><a href="description.jsp">Hitman Absolution Profressional Edition</td>
-    <td>10.00</td></a>
+    <td><a href="description">Hitman Absolution Profressional Edition</a></td>
+    <td>10.00</td>
   </tr>
   <tr>
-    <td><a href="description.jsp">Operation Flashpoint:Red river</td>
-    <td>11.12</td></a>
+    <td><a href="description">Operation Flashpoint:Red river</a></td>
+    <td>11.12</td>
   </tr>
   <tr>
-    <td><a href="description.jsp">A long Walk To Freedom</td>
-    <td>23.00</td></a>
+    <td><a href="description">A long Walk To Freedom</a></td>
+    <td>23.00</td>
   </tr>
   <tr>
-    <td><a href="description.jsp">Politically incorrect</td>
-    <td>22.00</td></a>
+    <td><a href="description">Politically incorrect</a></td>
+    <td>22.00</td>
   </tr>
   <tr>
-    <td><a href="description.jsp">A Born Bed</td>
-    <td>19.99</td></a>
+    <td><a href="description">A Born Bed</a></td>
+    <td>19.99</td>
   </tr>
 </table>
 </div>
 <p>@NIIT E-COMMERCE Case Study project 2017</p>
-<%@include file=footer.jsp %>
+<%@include file="footer.jsp" %>
 </body>
 </html>

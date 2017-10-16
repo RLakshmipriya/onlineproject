@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%@include file=header.jsp %>
+<%@include file="header.jsp" %>
 <body>
 
 <nav class="navbar navbar-inverse">
@@ -16,11 +16,11 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="basket.jsp">Basket</a></li>
-		<li><a href="products.jsp">Products</a></li>
+        <li><a href="basket">Basket</a></li>
+		<li><a href="products">Products</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="home.jsp"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        <li><a href="home"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>
   </div>
@@ -69,12 +69,13 @@
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
               
-			  <h2 class="sub-title">Currently Your Basket Contains Truly Awesome Products(s).</h5>
+			  <h2 class="sub-title">Currently Your Basket Contains Truly Awesome Products(s).</h2>
             </div>
 			</div>
 			</div>
-			<div class="container">
-			
+			</div>
+			<div class="container"></div>
+			</header>
 			<table class="table table-striped">
     <thead>
       <tr>
@@ -100,7 +101,7 @@
         <td>A Long Walk To Freedom</td>
         <td>23.00</td>
       </tr>
-	  </tr>
+	  
 	  <tr>
         <td>Politically Incorrect</td>
         <td>22.00</td>
@@ -118,18 +119,18 @@
   <div class="row">
     <div class="col-sm-4">
       <img src="./resource/image/pic2.jpg" class="img-responsive" style="width:100%" alt="Image">
-      <p>Dead Space 3 Limited Edition</</p>
-    </div>
+      <p>Dead Space 3 Limited Edition</p>
+    </div></div>
     <div class="row">
     <div class="col-sm-4">
       <img src="./resource/image/pic3.jpg" class="img-responsive" style="width:100%" alt="Image">
       <p>Hitman Absolution Professional Edition</p>
-    </div>
+    </div></div>
 	<div class="row">
     <div class="col-sm-4">
       <img src="./resource/image/pic4.jpg" class="img-responsive" style="width:100%" alt="Image">
       <p>Operation Flashpoint:Red river </p>
-    </div>
+    </div></div>
 	<div class="row">
     <div class="col-sm-4">
       <img src="./resource/image/pic5.jpg" class="img-responsive" style="width:100%" alt="Image">
@@ -150,7 +151,7 @@
   </div>
 </div><br>
 
-<%@include file=footer.jsp %>
+<%@include file="footer.jsp" %>
 
 </body>
 </html>

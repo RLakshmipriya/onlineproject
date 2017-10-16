@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<%@include file=header.jsp %>
-<body>
+<%@include file="header.jsp" %>
 
+<style>.carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }</style>
+  <body>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -16,12 +28,12 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="register.jsp">Basket</a></li>
+        <li><a href="register">Basket</a></li>
         
-        <li><a href="register.jsp">Register</a></li>
+        <li><a href="register">Register</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="register.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
@@ -69,12 +81,15 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              
-			  <h2 class="sub-title">Currently Your Basket Contains Truly Awesome Products(s).</h5>
             </div>
-			</div>
-			</div>
+            </div>
+            </div>
+            </div>
+            </header>
+              
+			  <h2 class="sub-title">Currently Your Basket Contains Truly Awesome Products(s).</h2>
 			<div class="container">
+			</div>
 			
 			<table class="table table-striped">
     <thead>
@@ -101,7 +116,7 @@
         <td>A Long Walk To Freedom</td>
         <td>23.00</td>
       </tr>
-	  </tr>
+	 
 	  <tr>
         <td>Politically Incorrect</td>
         <td>22.00</td>
@@ -120,17 +135,17 @@
     <div class="col-sm-4">
       <img src="./resource/image/pic2.jpg" class="img-responsive" style="width:100%" alt="Image">
       <p>DEAD SPACE 3 LIMITED EDITION</p>
-    </div>
+    </div></div>
     <div class="row">
     <div class="col-sm-4">
       <img src="./resource/image/pic3.jpg" class="img-responsive" style="width:100%" alt="Image">
       <p>HITMAN ABSOLUTION PROFFESSSIONAL EDITION</p>
-    </div>
+    </div></div>
 	<div class="row">
     <div class="col-sm-4">
       <img src="./resource/image/pic4.jpg" class="img-responsive" style="width:100%" alt="Image">
       <p>OPERATION FLASHPOINT:RED RIVER</p>
-    </div>
+    </div></div>
 	<div class="row">
     <div class="col-sm-4">
       <img src="./resource/image/pic5.jpg" class="img-responsive" style="width:100%" alt="Image">
@@ -151,7 +166,7 @@
   </div>
 </div><br>
 
-<%@include file=footer.jsp %>
+<%@include file="footer.jsp" %>
 
 </body>
 </html>

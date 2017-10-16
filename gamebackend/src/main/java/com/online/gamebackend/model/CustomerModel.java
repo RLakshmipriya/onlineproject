@@ -19,6 +19,8 @@ public class CustomerModel {
 	private String email;
 	@Column(name="Customer_contact")
 	private int contact;
+	@Column(name="Customer_password")
+	private String password;
 	@Column(name="Customer_place")
 	private String place;
 	public int getId() {
@@ -44,6 +46,12 @@ public class CustomerModel {
 	}
 	public void setContact(int contact) {
 		this.contact = contact;
+	}
+	public String getpassword() {
+		return password;
+	}
+	public void setpassword(String password) {
+		this.password = password;
 	}
 	public String getPlace() {
 		return place;

@@ -15,16 +15,21 @@ public class CustomerController {
 	@Autowired
 	private CustomerDao customerDao;
 	
-	@RequestMapping(value="/registeration", method=RequestMethod.GET)
+	@RequestMapping(value="/register", method=RequestMethod.GET)
 	public ModelAndView register() {
-		ModelAndView mv=new ModelAndView("registeration","command",new CustomerModel());
+		ModelAndView mv=new ModelAndView("register","command",new CustomerModel());
 		return mv;
 	}
 	
-	@RequestMapping(value="/registeration", method=RequestMethod.POST)
-	public ModelAndView register(@ModelAttribute("customer") CustomerModel customer){
-		ModelAndView mv=new ModelAndView("success");
+	@RequestMapping(value="/register", method=RequestMethod.POST)
+	public ModelAndView registerUser(@ModelAttribute("customer") CustomerModel customer){
+		ModelAndView mv=new ModelAndView("login");
 		customerDao.save(customer);
+		return mv;
+	}
+	@RequestMapping(value="/login", method=RequestMethod.GET)
+	public ModelAndView login() {
+		ModelAndView mv=new ModelAndView("login","command",new CustomerModel());
 		return mv;
 	}
 }
