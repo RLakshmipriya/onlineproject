@@ -44,7 +44,7 @@
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <!-- <button type="submit" class="btn btn-success">Submit</button> -->
-        <input type="submit" name="butsumbit" class="btn btn-success" value="Submit">
+        <input type="submit" name="butsumbit" class="btn btn-success" value="Register">
       </div>
     </div>
   </form>

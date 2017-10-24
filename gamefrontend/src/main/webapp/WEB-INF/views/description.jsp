@@ -15,6 +15,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
+        <a class="navbar-brand" href="products">products</a>
         <li><a href="basket">Basket</a></li>
         
         <li><a href="register.jsp">Register</a></li>

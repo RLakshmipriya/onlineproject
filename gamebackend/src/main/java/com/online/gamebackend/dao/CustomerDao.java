@@ -9,6 +9,9 @@ public interface CustomerDao {
 	public void delete(int id);
 	public void update(CustomerModel entity);
 	public CustomerModel findById(int id);
+	public CustomerModel findByEmail(String email);
+	public CustomerModel findByEmail(String email,String password);
+	public boolean validate(String email,String password);
 	public Set<CustomerModel> findAll();
 
 	

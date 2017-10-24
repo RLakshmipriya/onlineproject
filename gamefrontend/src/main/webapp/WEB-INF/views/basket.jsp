@@ -7,6 +7,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="home">Home</a>
+      <a class="navbar-brand" href="products">products</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Basket</a></li>

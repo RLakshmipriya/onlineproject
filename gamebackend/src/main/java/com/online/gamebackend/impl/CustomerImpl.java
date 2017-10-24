@@ -45,7 +45,7 @@ private SessionFactory sessionFactory;
 		return null;
 	}
 	
-	public CustomerModel findById(String email) {
+	/*public CustomerModel findById(String email) {
 		Session session=sessionFactory.openSession();
 		String hql = "FROM CustomerM C WHERE C.email = '" + email +"'" ;
 		Query query = session.createQuery(hql);
@@ -56,7 +56,22 @@ private SessionFactory sessionFactory;
 		else
 			return null;		
 		
+	}*/
+	public CustomerModel findByemail(String email,String password) {
+		// TODO Auto-generated method stub
+		List results = null;
+		Session session=sessionFactory.openSession();
+		String hql = "FROM Customer C WHERE C.email = '" + email +"'AND C.password ='" + password + "'" ;
+		Query query = session.createQuery(hql);
+		
+		results = query.list();
+		if(results!=null)
+			return (CustomerModel) results.get(0);
+		
+		else
+			return null;	
 	}
+
 	public boolean validate(String email, String password) {
 		Session session=sessionFactory.openSession();
 		String hql = "FROM Customer C WHERE C.email = '" + email +"' AND C.password ='" + password + "'" ;
@@ -65,9 +80,26 @@ private SessionFactory sessionFactory;
 		if(results!=null)
 			return true;
 		
-		else
-			return false;		
 		
+		else
+			return false;	
 	}
+
+	
+	public CustomerModel findByEmail(String email) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public CustomerModel findByEmail(String email, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	
+	
 	
 }

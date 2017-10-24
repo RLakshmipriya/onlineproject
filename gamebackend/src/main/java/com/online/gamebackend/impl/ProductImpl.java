@@ -37,39 +37,20 @@ private SessionFactory sessionFactory;
 	}
 
 	public ProductModel findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return (ProductModel)sessionFactory.openSession().get(ProductModel.class,id);
 	}
 
-	public Set<ProductModel> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<ProductModel> findAll() {
+		Session s=sessionFactory.openSession();
+		s.beginTransaction();
+		Query query=s.createQuery("from Product");
+		List<ProductModel> list=query.list();
+		System.out.println(list);
+		s.getTransaction().commit();
+		return list;
 	}
 	
-	public ProductModel findById(String email) {
-		Session session=sessionFactory.openSession();
-		String hql = "FROM CustomerM C WHERE C.email = '" + email +"'" ;
-		Query query = session.createQuery(hql);
-		List results = query.list();
-		if(results!=null)
-			return (ProductModel) results.get(0);
-		
-		else
-			return null;		
-		
-	}
-	public boolean validate(String email, String password) {
-		Session session=sessionFactory.openSession();
-		String hql = "FROM Customer C WHERE C.email = '" + email +"' AND C.password ='" + password + "'" ;
-		Query query = session.createQuery(hql);
-		List results = query.list();
-		if(results!=null)
-			return true;
-		
-		else
-			return false;		
-		
-	}
+	
 	
 }
 

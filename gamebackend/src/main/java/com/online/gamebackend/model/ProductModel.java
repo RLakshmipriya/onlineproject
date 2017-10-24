@@ -1,16 +1,21 @@
 package com.online.gamebackend.model;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="customer")
+@Table(name="product")
 public class ProductModel {
 	@Id
+	@GeneratedValue
 	@Column(name="Product_id")
-	private String  id;
+	private int  id;
+	@Column(name="Supplier_id")
+	private String supid;
 	@Column(name="Product_name")
 	private String name;
 	@Column(name="Product_description")
@@ -21,10 +26,10 @@ public class ProductModel {
 	private String price;
 	@Column(name="Product_image")
 	private String image;
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {

@@ -28,12 +28,13 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="register">Basket</a></li>
+        <li><a href="products">Products</a></li>
         
         <li><a href="register">Register</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="basket"><span class="glyphicon glyphicon-log-in"></span> basket</a></li>
+           <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> login</a></li>
       </ul>
     </div>
   </div>
@@ -51,13 +52,13 @@
       <div class="item active">
         <img src="./resource/image/img1.jpg" alt="Image">
         <div class="carousel-caption">
-		<img src="./resource/image/LOGO.png" style="width:304px;height:228px;">
+		<img src="resources/image/LOGO.png" style="width:304px;height:228px;">
           <h3>NIIT E-COMMERCE PROJECT</h3>
           <p>WELCOME TO THE HOME OF ALL THINGS NIIT</p>
         </div>      
       </div>
       <div class="item">
-        <img src="./resource/image/img3.jpg" alt="Image">
+        <img src="resources/image/img3.jpg" alt="Image">
         <div class="carousel-caption">
           <h3>NIIT </h3>
          
@@ -133,17 +134,17 @@
   
   <div class="row">
     <div class="col-sm-4">
-      <img src="./resource/image/pic2.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <img src="/image/pic2.jpg" class="img-responsive" style="width:100%" alt="Image">
       <p>DEAD SPACE 3 LIMITED EDITION</p>
     </div></div>
     <div class="row">
     <div class="col-sm-4">
-      <img src="./resource/image/pic3.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <img src="resource/image/pic3.jpg" class="img-responsive" style="width:100%" alt="Image">
       <p>HITMAN ABSOLUTION PROFFESSSIONAL EDITION</p>
     </div></div>
 	<div class="row">
     <div class="col-sm-4">
-      <img src="./resource/image/pic4.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <img src="image/pic4.jpg" class="img-responsive" style="width:100%" alt="Image">
       <p>OPERATION FLASHPOINT:RED RIVER</p>
     </div></div>
 	<div class="row">

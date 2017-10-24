@@ -1,5 +1,8 @@
 package com.online.gamefrontend.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,4 +35,21 @@ public class CustomerController {
 		ModelAndView mv=new ModelAndView("login","command",new CustomerModel());
 		return mv;
 	}
+	@RequestMapping(value="/login", method=RequestMethod.POST)
+	public ModelAndView validate(HttpServletRequest request, HttpServletResponse response){		
+		String email=request.getParameter("email");
+		String password=request.getParameter("password");
+		CustomerModel customer=customerDao.findByEmail(email,password);	
+		//request.setAttribute("customer", customer );
+		ModelAndView mv=null;
+		if(customer!=null){
+			mv=new ModelAndView("userhome");
+			//mv.getModelMap().addAttribute("customer", customer);
+		}else{
+			mv=new ModelAndView("login");		
+			//mv.getModelMap().addAttribute("customer", customer);
+		}			
+		return mv;
+	}
+
 }
