@@ -43,14 +43,12 @@ private SessionFactory sessionFactory;
 	public List<ProductModel> findAll() {
 		Session s=sessionFactory.openSession();
 		s.beginTransaction();
-		Query query=s.createQuery("from Product");
+		Query query=s.createQuery("from ProductModel");
 		List<ProductModel> list=query.list();
 		System.out.println(list);
 		s.getTransaction().commit();
 		return list;
-	}
-	
-	
+	}	
 	
 }
 

@@ -13,55 +13,60 @@ public class ProductModel {
 	@Id
 	@GeneratedValue
 	@Column(name="Product_id")
-	private int  id;
+	private int  pid;
 	@Column(name="Supplier_id")
 	private String supid;
 	@Column(name="Product_name")
-	private String name;
+	private String pname;
 	@Column(name="Product_description")
-	private String description;
+	private String pdescription;
 	@Column(name="Product_quantity")
-	private String quantity ;
+	private String pquantity ;
 	@Column(name="Product_price")
-	private String price;
+	private String pprice;
 	@Column(name="Product_image")
-	private String image;
-	public int getId() {
-		return id;
+	private String pimage;
+	public int getPid() {
+		return pid;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setPid(int pid) {
+		this.pid = pid;
 	}
-	public String getName() {
-		return name;
+	public String getSupid() {
+		return supid;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setSupid(String supid) {
+		this.supid = supid;
 	}
-	public String getDescription() {
-		return description ;
+	public String getPname() {
+		return pname;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setPname(String pname) {
+		this.pname = pname;
 	}
-	public String getQuantity() {
-		return quantity;
+	public String getPdescription() {
+		return pdescription;
 	}
-	public void setContact(String quantity) {
-		this.quantity = quantity;
+	public void setPdescription(String pdescription) {
+		this.pdescription = pdescription;
 	}
-	public String getPrice() {
-		return price;
+	public String getPquantity() {
+		return pquantity;
 	}
-	public void setprice(String price) {
-		this.price = price;
+	public void setPquantity(String pquantity) {
+		this.pquantity = pquantity;
 	}
-	public String getImage() {
-		return image;
+	public String getPprice() {
+		return pprice;
 	}
-	public void setimage(String image) {
-		this.image = image;
+	public void setPprice(String pprice) {
+		this.pprice = pprice;
+	}
+	public String getPimage() {
+		return pimage;
+	}
+	public void setPimage(String pimage) {
+		this.pimage = pimage;
 	}
 	
-
 }

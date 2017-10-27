@@ -1,10 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isELIgnored="false"%>
-    <%@taglib prefix="spring" uri="http://www.springframework.org/tags/form" %>
 <%@include file="header.jsp" %>
-<body>
 <style>
     background-color: #525252;
 }
@@ -90,9 +88,8 @@
 	border-color: #53A3CD;
 }
 </style>
+
 <body>
-
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -107,14 +104,12 @@
         <li><a href="#">Home</a></li>
 		<li  class="dropdown"><a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Add</a>
 			<ul class="dropdown-menu">
-				<li><a href="addproduct">Product</a>
-				 <!--   <li><a href="addcategory">Category</a>-->
-			<!--  	<li><a href="addsupplier">Supplier</a>-->
+				<li><a href="addsupplier">Supplier</a>
 			</ul>
 			
 		</li>
 		
-        <li><a href="products"></span> Products</a></li>
+        <li><a href="products"></span> products</a></li>
 		
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -125,96 +120,6 @@
   </div>
 </nav>
 <div class="container">
-    	<div class="row">
-			<div class="col-lg-12">
-				<div class="panel panel-add">
-					<div class="panel-heading">
-						<div class="row">
-							<div class="col-sm-6 col-sm-offset-3">
-								<a href="#" class="active" >Add Products</a>
-							</div>
-						</div>
-					</div>	
-					<div class="panel-body">
-    	<div class="row">
-			<div class="col-md-6 col-sm-offset-3">
-						<form action="addproduct" method="POST" role="form" style="display: block;">
-									
-									<div class="form-group">
-										<input type="text" name="supid" id="supid" tabindex="1" class="form-control" placeholder="Supplier Id  Ex:'S_xxx'" >
-									</div>
-									<div class="form-group">
-										<input type="text" name="pname" id="name" tabindex="1" class="form-control" placeholder="Product Name" >
-									</div>
-									<div class="form-group">
-										<input type="text" name="pdescription" id="description" tabindex="1" class="form-control" placeholder="Description" >
-									</div>
-									<div class="form-group">
-										<input type="text" name="pquantity" id="quantity" tabindex="1" class="form-control" placeholder="Quantity" >
-									</div>
-									<div class="form-group">
-										<input type="text" name="pprice" id="price" tabindex="1" class="form-control" placeholder="Price">
-									</div>
-									<div class="form-group">
-										<input type="file" name="pimage" id="image"" tabindex="1" class="form-control" placeholder="Image">										
-									</div>
-													
-																
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6">
-												<input type="submit" name="addProductBut" tabindex="4" class="form-control btn btn-add" value="Add">
-											</div>
-											
-										</div>
-									</div>
-								</form>
-</div>
-</div>
-</div></div></div>
-</div>
-</div>
-   <!--   <div class="container">
-    	<div class="row">
-			<div class="col-lg-12">
-				<div class="panel panel-add">
-					<div class="panel-heading">
-						<div class="row">
-							<div class="col-sm-6 col-sm-offset-3">
-								<a href="#" class="active" >Add Category</a>
-							</div>
-						</div>
-					</div>	
-					<div class="panel-body">
-    	<div class="row">
-			<div class="col-md-6 col-sm-offset-3">
-						<form action="addcategory" method="POST" style="display: block;">
-									
-									
-									<div class="form-group">
-										<input type="text" name="cname"  class="form-control" placeholder="category Name">
-									</div>
-									<div class="form-group">
-										<input type="text" name="cdesc" class="form-control" placeholder="category Description">
-									</div>
-									
-													
-																
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6">
-												<input type="submit" name="addCategoryBut" class="form-control btn btn-add" value="Add">
-											</div>
-											
-										</div>
-									</div>
-								</form>
-</div>
-</div>
-</div></div></div>
-</div>
-</div>-->
- <!--   <div class="container">
     	<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-add">
@@ -242,9 +147,6 @@
 									<div class="form-group">
 										<input type="text" name="saddress" class="form-control" placeholder="Supplier Address" />
 									</div>
-									
-													
-																
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6">
@@ -258,8 +160,9 @@
 </div>
 </div></div></div>
 </div>
-</div>-->
-
+</div>
+									
+												
 <%@include file="footer.jsp" %>
 </body>
 </html>

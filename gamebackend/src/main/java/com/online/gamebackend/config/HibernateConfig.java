@@ -2,6 +2,7 @@ package com.online.gamebackend.config;
 
 import java.util.Properties;
 
+
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
@@ -12,7 +13,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 
+import com.online.gamebackend.model.CategoryModel;
 import com.online.gamebackend.model.CustomerModel;
+import com.online.gamebackend.model.ProductModel;
+import com.online.gamebackend.model.SupplierModel;
+
 
 @Configuration
 @ComponentScan({"com.online.gamebackend"})
@@ -44,7 +49,9 @@ public class HibernateConfig {
 		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource);
 		builder.addProperties(getHibernateProperties());
 		builder.addAnnotatedClass(CustomerModel.class);
-		//builder.addAnnotatedClass(Product.class);
+		builder.addAnnotatedClass(ProductModel.class);
+		builder.addAnnotatedClass(SupplierModel.class);
+		builder.addAnnotatedClass(CategoryModel.class);
 		return builder.buildSessionFactory();
 	}
 

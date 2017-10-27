@@ -50,15 +50,15 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="./resource/image/img1.jpg" alt="Image">
+        <img src="./resources/image/img1.jpg" alt="Image">
         <div class="carousel-caption">
-		<img src="resources/image/LOGO.png" style="width:304px;height:228px;">
+		<img src="./resources/image/LOGO.png" style="width:304px;height:228px;">
           <h3>NIIT E-COMMERCE PROJECT</h3>
           <p>WELCOME TO THE HOME OF ALL THINGS NIIT</p>
         </div>      
       </div>
       <div class="item">
-        <img src="resources/image/img3.jpg" alt="Image">
+        <img src="./resources/image/img3.jpg" alt="Image">
         <div class="carousel-caption">
           <h3>NIIT </h3>
          
@@ -77,7 +77,7 @@
     </a>
 </div>
  Page Header -->
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <header class="masthead"><!--  style="background-image: url('./resources/image/home-bg.jpg')"> -->
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
@@ -134,31 +134,31 @@
   
   <div class="row">
     <div class="col-sm-4">
-      <img src="/image/pic2.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <img src="./resources/image/pic2.jpg" class="img-responsive" style="width:100%" alt="Image">
       <p>DEAD SPACE 3 LIMITED EDITION</p>
     </div></div>
     <div class="row">
     <div class="col-sm-4">
-      <img src="resource/image/pic3.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <img src="./resources/image/pic3.jpg" class="img-responsive" style="width:100%" alt="Image">
       <p>HITMAN ABSOLUTION PROFFESSSIONAL EDITION</p>
     </div></div>
 	<div class="row">
     <div class="col-sm-4">
-      <img src="image/pic4.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <img src="./resources/image/pic4.jpg" class="img-responsive" style="width:100%" alt="Image">
       <p>OPERATION FLASHPOINT:RED RIVER</p>
     </div></div>
 	<div class="row">
     <div class="col-sm-4">
-      <img src="./resource/image/pic5.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <img src="./resources/image/pic5.jpg" class="img-responsive" style="width:100%" alt="Image">
       <p>A LONG WALK TO FREEDOM</p>
     </div>
 	<div class="row">
     <div class="col-sm-4">
-      <img src="./resource/image/pic6.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <img src="./resources/image/pic6.jpg" class="img-responsive" style="width:100%" alt="Image">
       <p>POTICIALLY INCORRECT</p>
     </div><div class="row">
     <div class="col-sm-4">
-      <img src="./resource/image/pic7.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <img src="./resources/image/pic7.jpg" class="img-responsive" style="width:100%" alt="Image">
       <p>THE BORN BED</p>
     </div>
 	

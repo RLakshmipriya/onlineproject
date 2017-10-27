@@ -2,7 +2,7 @@
 <html lang="en">
 <%@include file="header.jsp" %>
 <%@ taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
-<%@ page isELIgnored="false" %>
+//<%@ page isELIgnored="false" %>
 
 
 <body>
@@ -13,7 +13,7 @@
     </div>
     <ul class="nav navbar-nav">
 	 <li><a href="login.jsp">Basket</a></li>
-      <li class="active"><a href="#">Products</a></li>
+      <li class="active"><a href="products">Products</a></li>
       
       </ul>
     <ul class="nav navbar-nav navbar-right">
@@ -37,7 +37,7 @@
         <div class="panel-heading">${p.name}</div>
         <div class="panel-body"><img src="./resource/image/${p.image }" class="img-responsive" style="width:100%" height="auto" ></div>
         <div class="panel-footer">Price: ${p.price}</div>
-        <div><a href="product?id=${p.pid}" role="button" class="btn btn-warning">Add to cart</a></div>
+        <div><a href="product?id=${p.id}" role="button" class="btn btn-warning">Add to cart</a></div>
 			</div>
     </div></c:forEach></div></div>
   <%-- <p>Currently Your Basket Contain Truly Awesome Products(s).</p>            
