@@ -1,6 +1,7 @@
 package com.online.gamefrontend.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,26 +13,51 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.online.gamebackend.dao.CategoryDao;
-import com.online.gamebackend.dao.ProductDao;
 import com.online.gamebackend.model.CategoryModel;
 
 @Controller
 public class CategoryController {
-@Autowired
-private CategoryDao categoryDao;
-
-@RequestMapping(value="/addcategory", method=RequestMethod.GET)
-public ModelAndView viewAddCategory(){
-	ModelAndView mv=new ModelAndView("category","command",new CategoryModel());	
-	return mv;
-	
+	@Autowired
+	private CategoryDao categoryDao;
+	@RequestMapping(value="/addcategory", method=RequestMethod.GET)
+	public ModelAndView viewAddCategory(){
+		ModelAndView mv=new ModelAndView("add","command",new CategoryModel());
+		//ModelAndView mv1=new ModelAndView("add","command",new Category());
+		return mv;
+		
 }
-@RequestMapping(value="/addcategory", method=RequestMethod.POST)
-public ModelAndView addCategory(@ModelAttribute("category") CategoryModel category){
-	ModelAndView mv=new ModelAndView("products");
-	categoryDao.save(category);
-	System.out.println(category.getCname());
-	System.out.println(category.getCdesc());
-	return mv;
+	@RequestMapping(value="/addcategory", method=RequestMethod.POST)
+	 public ModelAndView addCategory(@ModelAttribute("category") CategoryModel category){
+		categoryDao.save(category);
+		ModelAndView mv=new ModelAndView("stock");
+		return mv;
+	 }
+	@RequestMapping(value="/updatecategory", method=RequestMethod.GET)
+	public ModelAndView viewUpdateCategory(Model model,@RequestParam("id") int cid){
+		ModelAndView mv=new ModelAndView("update");
+		CategoryModel category=categoryDao.findById(cid);
+		mv.getModelMap().addAttribute("category", category);
+		return mv;
+}
+	
+	@RequestMapping(value="/updatecategory", method=RequestMethod.POST)
+	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
+	public ModelAndView updateCategory(HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mv=new ModelAndView("redirect:stock");
+		CategoryModel category=new CategoryModel();
+		category.setCid(Integer.parseInt(request.getParameter("cid")));
+		category.setCname(request.getParameter("cname"));
+		category.setCdescription(request.getParameter("cdescription"));
+		categoryDao.update(category);
+		mv.getModelMap().addAttribute("stock", categoryDao.findAll());
+		return mv;
+		
+	 }
+	@RequestMapping(value="/deletecategory", method=RequestMethod.GET)
+	public ModelAndView viewDelete(@RequestParam("id") int cid){
+		ModelAndView mv=new ModelAndView("stock","command",new CategoryModel());
+		categoryDao.delete(cid);
+		mv.getModelMap().addAttribute("stock", categoryDao.findAll());
+		return mv;
 }
 }

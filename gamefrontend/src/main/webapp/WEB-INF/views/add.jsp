@@ -2,6 +2,7 @@
 <html>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
+    <%@ taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
     <%@taglib prefix="spring" uri="http://www.springframework.org/tags/form" %>
 <%@include file="header.jsp" %>
 <body>
@@ -108,8 +109,8 @@
 		<li  class="dropdown"><a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Add</a>
 			<ul class="dropdown-menu">
 				<li><a href="addproduct">Product</a>
-				 <!--   <li><a href="addcategory">Category</a>-->
-			<!--  	<li><a href="addsupplier">Supplier</a>-->
+				      <li><a href="addcategory">Category</a>
+				<li><a href="addsupplier">Supplier</a>
 			</ul>
 			
 		</li>
@@ -134,29 +135,47 @@
 								<a href="#" class="active" >Add Products</a>
 							</div>
 						</div>
-					</div>	
+					</div>	</div></div></div>
 					<div class="panel-body">
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
 						<form action="addproduct" method="POST" role="form" style="display: block;">
 									
+									
 									<div class="form-group">
-										<input type="text" name="supid" id="supid" tabindex="1" class="form-control" placeholder="Supplier Id  Ex:'S_xxx'" >
+										<input type="text" name="pname" id="pname" tabindex="1" class="form-control" placeholder="Product Name" >
 									</div>
 									<div class="form-group">
-										<input type="text" name="pname" id="name" tabindex="1" class="form-control" placeholder="Product Name" >
+ 
+ 										 <select   class="form-control" name="sid" id="sid" tabindex="1" placeholder="Select Supplier">
+ 										 <option value="" disabled selected> Select Supplier Name</option>
+ 										 										<!-- <option id="1" value="Puzzles">Puzzles</option>
+    																			<option id="2" value="Runner Games">Runner Games</option>
+    																			<option id="3" value="Thriller Games">Thriller Games</option>
+    																			<option id="4" value="Cookery">Cookery</option> -->
+    									 <c:forEach items="${supplier}" var="s">
+      										<option value="${s.sid}">${s.sname}</option>
+										</c:forEach>
+    									</select>
+    								</div>
+    					<div class="form-group">			 
+  						<select   class="form-control" name="cat" id="cat" tabindex="1" placeholder="Select Category">
+ 										<option value="" disabled selected>Select Product Category</option>	
+    						 <c:forEach items="${categories}" var="c">
+      									<option value="${c.cid}">${c.cname}</option>
+							 </c:forEach>
+    					</select></div>
+									<div class="form-group">
+										<input type="text" name="pdescription" id="pdescription" tabindex="1" class="form-control" placeholder="Description" >
 									</div>
 									<div class="form-group">
-										<input type="text" name="pdescription" id="description" tabindex="1" class="form-control" placeholder="Description" >
+										<input type="text" name="pstock" id="pstock" tabindex="1" class="form-control" placeholder="Stock" >
 									</div>
 									<div class="form-group">
-										<input type="text" name="pquantity" id="quantity" tabindex="1" class="form-control" placeholder="Quantity" >
+										<input type="text" name="pprice" id="pprice" tabindex="1" class="form-control" placeholder="Price">
 									</div>
 									<div class="form-group">
-										<input type="text" name="pprice" id="price" tabindex="1" class="form-control" placeholder="Price">
-									</div>
-									<div class="form-group">
-										<input type="file" name="pimage" id="image"" tabindex="1" class="form-control" placeholder="Image">										
+										<input type="file" name="pimg" id="pimg"" tabindex="1" class="form-control" placeholder="Image">										
 									</div>
 													
 																
@@ -170,11 +189,8 @@
 									</div>
 								</form>
 </div>
-</div>
-</div></div></div>
-</div>
-</div>
-   <!--   <div class="container">
+
+       <div class="container">
     	<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-add">
@@ -192,10 +208,10 @@
 									
 									
 									<div class="form-group">
-										<input type="text" name="cname"  class="form-control" placeholder="category Name">
+										<input type="text" name="cname"id="cname" tabindex="1"  class="form-control" placeholder="category Name">
 									</div>
 									<div class="form-group">
-										<input type="text" name="cdesc" class="form-control" placeholder="category Description">
+										<input type="text" name="cdescription" id="cdescription" tabindex="1"class="form-control" placeholder="category Description">
 									</div>
 									
 													
@@ -213,8 +229,8 @@
 </div>
 </div></div></div>
 </div>
-</div>-->
- <!--   <div class="container">
+</div>
+   <div class="container">
     	<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-add">
@@ -224,7 +240,7 @@
 								<a href="#" class="active" >Add Supplier</a>
 							</div>
 						</div>
-					</div>	
+					</div>	</div></div></div>
 					<div class="panel-body">
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
@@ -257,9 +273,7 @@
 </div>
 </div>
 </div></div></div>
-</div>
-</div>-->
-
+</div></div>
 <%@include file="footer.jsp" %>
 </body>
 </html>

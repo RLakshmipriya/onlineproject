@@ -9,9 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="supplier")
 public class SupplierModel {
-	
-	
-		@Id
+	    @Id
 		@GeneratedValue
 		@Column(name="supplier_id")
 		private int sid;
@@ -20,7 +18,7 @@ public class SupplierModel {
 		@Column(name="supplier_email")
 		private String semail;
 		@Column(name="supplier_contact")
-		private int scontact;
+		private String scontact;
 		@Column(name="supplier_address")
 		private String saddress;
 		public int getSid() {
@@ -41,10 +39,10 @@ public class SupplierModel {
 		public void setSemail(String semail) {
 			this.semail = semail;
 		}
-		public int getScontact() {
+		public String getScontact() {
 			return scontact;
 		}
-		public void setScontact(int scontact) {
+		public void setScontact(String scontact) {
 			this.scontact = scontact;
 		}
 		public String getSaddress() {
@@ -53,6 +51,7 @@ public class SupplierModel {
 		public void setSaddress(String saddress) {
 			this.saddress = saddress;
 		}
+		
 
 		
 	

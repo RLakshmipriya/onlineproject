@@ -12,12 +12,12 @@ import javax.persistence.Table;
 public class CategoryModel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="cat_id")//,unique=true
+	@Column(name="category_id")//,unique=true
 	private int cid;
-	@Column(name="cat_name")
+	@Column(name="category_name")
 	private String cname;
-	@Column(name="cat_desc")
-	private String  cdesc;
+	@Column(name="category_description")
+	private String  cdescription;
 	public int getCid() {
 		return cid;
 	}
@@ -30,12 +30,13 @@ public class CategoryModel {
 	public void setCname(String cname) {
 		this.cname = cname;
 	}
-	public String getCdesc() {
-		return cdesc;
+	public String getCdescription() {
+		return cdescription;
 	}
-	public void setCdesc(String cdesc) {
-		this.cdesc = cdesc;
+	public void setCdescription(String cdescription) {
+		this.cdescription = cdescription;
 	}
-
+	
+	
 
 }

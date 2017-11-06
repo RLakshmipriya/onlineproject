@@ -34,10 +34,10 @@
   
     <div class="col-sm-4">
       <div class="panel panel-warning">
-        <div class="panel-heading">${p.name}</div>
-        <div class="panel-body"><img src="./resource/image/${p.image }" class="img-responsive" style="width:100%" height="auto" ></div>
-        <div class="panel-footer">Price: ${p.price}</div>
-        <div><a href="product?id=${p.id}" role="button" class="btn btn-warning">Add to cart</a></div>
+        <div class="panel-heading">${p.pname}</div>
+        <div class="panel-body"><img src="./resource/image/${p.pimg }" class="img-responsive" style="width:100%" height="auto" ></div>
+        <div class="panel-footer">Price: ${p.pprice}</div>
+        <div><a href="product?id=${p.pid}" role="button" class="btn btn-warning">Add to cart</a></div>
 			</div>
     </div></c:forEach></div></div>
   <%-- <p>Currently Your Basket Contain Truly Awesome Products(s).</p>            

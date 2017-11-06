@@ -10,7 +10,7 @@
       <a class="navbar-brand" href="#">UserHome</a>
     </div>
     <ul class="nav navbar-nav">
-	 <li><a href="login">Basket</a></li>
+	 <li><a href="login">cart</a></li>
       <li class="active"><a href="#">Products</a></li>
       
       </ul>

@@ -1,5 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+    <%@taglib prefix="spring" uri="http://www.springframework.org/tags/form" %>
+
+
 <%@include file="header.jsp" %>
 
 
@@ -129,25 +134,25 @@
 							</div>
 						</div>
 					</div>	
-					<div class="panel-body">
+	<div class="panel-body">
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
 						<form action="addcategory" method="POST" style="display: block;">
 									
-									
 									<div class="form-group">
-										<input type="text" name="cname"  class="form-control" placeholder="category Name">
+										<input type="text" name="cname" class="form-control" placeholder="category Name" />
 									</div>
 									<div class="form-group">
-										<input type="text" name="cdesc" class="form-control" placeholder="category Description">
+										<input type="text" name="cdesc" class="form-control" placeholder="category Description" />
 									</div>
 									
-													
-																
+											
+										</div>
+									</div>
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6">
-												<input type="submit" name="addCategoryBut" class="form-control btn btn-add" value="Add">
+												<input type="submit" name="addCategory" class="form-control btn btn-add" value="Add" />
 											</div>
 											
 										</div>
@@ -158,15 +163,15 @@
 </div></div></div>
 </div>
 </div>
-
 <div class="jumbotron">
   <div class="container text-center">
     <h1>NIIT E-Commerce Store</h1>      
     <p>Welcome to the Home of all things NIIT </p>
   </div>
 </div>
+									
 
 <%@include file="footer.jsp" %>
 
 </body>
-</html>
+</html>-->

@@ -1,7 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!--  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>jh
 <%@include file="header.jsp" %>
 <style>
     background-color: #525252;
@@ -150,7 +148,7 @@
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6">
-												<input type="submit" name="addSupplierBut" class="form-control btn btn-add" value="Add" />
+												<input type="submit" name="addSupplier" class="form-control btn btn-add" value="Add" />
 											</div>
 											
 										</div>
@@ -161,8 +159,14 @@
 </div></div></div>
 </div>
 </div>
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>NIIT E-Commerce Store</h1>      
+    <p>Welcome to the Home of all things NIIT </p>
+  </div>
+</div>
 									
 												
 <%@include file="footer.jsp" %>
 </body>
-</html>
+</html>-->

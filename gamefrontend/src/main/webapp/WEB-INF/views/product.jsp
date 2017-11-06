@@ -13,7 +13,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"><img src="./resource/images/./resource/images/niit-logo.jpg" class="img-rounded" alt="Cinque Terre" width="40" height="30"> </a>
+      <a class="navbar-brand" href="#"><img src="./resource/images/niit-logo.jpg" class="img-rounded" alt="Cinque Terre" width="40" height="30"> </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -33,16 +33,16 @@
   
     <div class="col-sm-4">
       <div class="panel panel-primary">
-        <div class="panel-heading">${product.name}</div>
-        <div class="panel-body"><img src="./resource/image/${product.image}" class="img-responsive" style="width:100%" height="auto" ></div>
-        <div class="panel-footer">Price: ${product.price}</div>
+        <div class="panel-heading">${product.pname}</div>
+        <div class="panel-body"><img src="./resources/image/${product.pimg}" class="img-responsive" style="width:100%" height="auto" ></div>
+        <div class="panel-footer">Price: ${product.pprice}</div>
 			</div>
     </div>
     <div class="col-sm-6">
     <div class="panel panel-warning"><h4>Description</h4>
-        <div class="panel-heading" >${product.name}</div>
-        <div class="panel-body">${product.description}</div>
-        <div class="panel-footer">Price: ${product.price}</div>
+        <div class="panel-heading" >${product.pname}</div>
+        <div class="panel-body">${product.pdescription}</div>
+        <div class="panel-footer">Price: ${product.pprice}</div>
         <p><input type="submit" value="Add to cart" class="btn" /></p>
         
 			<%-- </div>
