@@ -35,12 +35,7 @@ private SessionFactory sessionFactory;
 		
 	}
 
-	public CustomerModel findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Set<CustomerModel> findAll() {
+		public Set<CustomerModel> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -57,44 +52,41 @@ private SessionFactory sessionFactory;
 			return null;		
 		
 	}*/
-	public CustomerModel findByemail(String email,String password) {
-		// TODO Auto-generated method stub
-		List results = null;
-		Session session=sessionFactory.openSession();
-		String hql = "FROM Customer C WHERE C.email = '" + email +"'AND C.password ='" + password + "'" ;
-		Query query = session.createQuery(hql);
-		
-		results = query.list();
-		if(results!=null)
-			return (CustomerModel) results.get(0);
-		
-		else
-			return null;	
-	}
+		public CustomerModel findByEmail(String email,String password) {
+			// TODO Auto-generated method stub
+			List results = null;
+			Session session=sessionFactory.openSession();
+			String hql = "FROM Customer C WHERE C.email = '" + email +"'AND C.password ='" + password + "'" ;
+			Query query = session.createQuery(hql);
+			
+			results = query.list();
+			if(results!=null)
+				return (CustomerModel) results.get(0);
+			
+			else
+				return null;	
+		}
 
-	public boolean validate(String email, String password) {
-		Session session=sessionFactory.openSession();
-		String hql = "FROM Customer C WHERE C.email = '" + email +"' AND C.password ='" + password + "'" ;
-		Query query = session.createQuery(hql);
-		List results = query.list();
-		if(results!=null)
-			return true;
-		
-		
-		else
-			return false;	
-	}
-
-	
-	public CustomerModel findByEmail(String email) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		public boolean validate(String email, String password) {
+			Session session=sessionFactory.openSession();
+			String hql = "FROM Customer C WHERE C.email = '" + email +"'AND C.password ='" + password + "'" ;
+			Query query = session.createQuery(hql);
+			List results = null;
+			results = query.list();
+			if(results!=null)
+				return true;
+			
+			else
+				return false;	
+		}
 
 
-	public CustomerModel findByEmail(String email, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		public CustomerModel findById(int id) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		
 	}
 
 
@@ -102,4 +94,4 @@ private SessionFactory sessionFactory;
 	
 	
 	
-}
+

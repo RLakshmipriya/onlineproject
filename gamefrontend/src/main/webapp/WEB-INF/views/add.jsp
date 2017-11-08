@@ -1,9 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isELIgnored="false"%>
-    <%@ taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
-    <%@taglib prefix="spring" uri="http://www.springframework.org/tags/form" %>
+<!DOCTYPE html >
+<html lang="en">
+<%@page isELIgnored="false" %>
 <%@include file="header.jsp" %>
 <body>
 <style>
@@ -94,37 +91,9 @@
 <body>
 
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
-		<li  class="dropdown"><a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Add</a>
-			<ul class="dropdown-menu">
-				<li><a href="addproduct">Product</a>
-				      <li><a href="addcategory">Category</a>
-				<li><a href="addsupplier">Supplier</a>
-			</ul>
-			
-		</li>
-		
-        <li><a href="products"></span> Products</a></li>
-		
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="orders"><span class="glyphicon glyphicon-tasks"></span>My order </a></li>
-        <li><a href="myhome"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
-	</ul>
-    </div>
-  </div>
-</nav>
+<%@include file="navbar.jsp"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <div class="container">
     	<div class="row">
 			<div class="col-lg-12">

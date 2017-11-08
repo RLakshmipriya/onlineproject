@@ -180,7 +180,7 @@
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-sm-6 col-sm-offset-3">
-								<a href="#" class="active" >Update Products</a>
+								<a href="#" class="active" >Update Category</a>
 							</div>
 						</div>
 					</div>	
@@ -212,6 +212,51 @@
 </div>
 </div></div></div>
 </div></div>
+<div class="container">
+    	<div class="row">
+			<div class="col-lg-12">
+					<div class="panel panel-update">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<a href="#" class="active" >Update Supplier</a>
+							</div>
+						</div>
+					</div>	
+					<div class="panel-body">
+    	<div class="row">
+			<div class="col-md-6 col-sm-offset-3">
+						<form id="update" action="updatesupplier" method="POST" role="form" style="display: block;" >
+									
+									<input type="hidden" name="id" value="${supplier.sid}" />
+									<div class="form-group">
+										<input type="text" name="sname" id="sname" tabindex="1" class="form-control" placeholder="Supplier Name" value="${supplier.sname}">
+									</div>
+									<div class="form-group">
+										<input type="text" name="semail" id="semail" tabindex="1" class="form-control" placeholder="Supplier Email" value="${supplier.semail}" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="saddress" id="saddress" tabindex="1" class="form-control" placeholder="Supplier Address" value="${supplier.saddress}">
+									</div>
+									<div class="form-group">
+										<input type="text" name="scontact" id="scontact" tabindex="1" class="form-control" placeholder="Supplier Contact" value="${supplier.scontact}" >
+									</div>
+													
+																
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="submit" name="update-submit" id="update-submit" tabindex="4" class="form-control btn btn-update" value="Update Supplier">
+											</div>
+											
+										</div>
+									</div>
+								</form>
+</div>
+</div>
+</div></div></div>
+</div></div>
+
 
 <%@include file="footer.jsp" %>
 </body>

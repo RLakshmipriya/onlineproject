@@ -4,40 +4,7 @@
 <%@include file="header.jsp"%>
 <%@taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
 <body>
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#"><img src="./resource/images/Capture.jpg" class="img-rounded" alt="NIIT" width="40" height="30"> </a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="stock">Home</a></li>
-		<li  class="dropdown"><a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span>Add</a>
-			<ul class="dropdown-menu">
-				<li><a href="addproduct">Product</a>
-				<li><a href="addcategory">Category</a>
-				<li><a href="addsupplier">Supplier</a>
-			</ul>
-			
-		</li>
-		<li><a href="update"><span class="glyphicon glyphicon-pencil"></span>Update</a></li>
-		<li><a href="delete"><span class="glyphicon glyphicon-trash"></span>Delete</a></li>
-        <li><a href="view"><span class="glyphicon glyphicon-list-alt"></span>My Products</a></li>
-		
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="orders"><span class="glyphicon glyphicon-tasks"></span>My Orders<span class="badge">2</span> </a></li>
-        <li><a href="home"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
-	</ul>
-    </div>
-  </div>
-</nav>
+<%@include file="navbar.jsp"%>
 <div class="container"> 
   <div class="row">  
     <div class="col-sm-14"> 
@@ -88,6 +55,38 @@
       </c:forEach>
       </div></div>
       </div>
+  </div>
+<div class="container"> 
+  <div class="row">  
+    <div class="col-sm-12"> 
+      <div class="panel panel-primary">
+      <div align="center" class="col-sm-2 panel-heading">Supplier_Id</div>
+      <div align="center" class="col-sm-2 panel-heading">Supplier_Name</div>
+      <div align="center" class="col-sm-2 panel-heading">Supplier_Address</div>
+      <div align="center" class="col-sm-2 panel-heading">Supplier_Email</div>
+      <div align="center" class="col-sm-2 panel-heading">Supplier_Contact</div>
+      <div align="center" class="col-sm-2 panel-heading">Action</div>
+      </div></div></div>
+      <%-- <a href="view?id=${p.pid}"><img src="./resource/images/${p.pimg}" class="img-responsive" style="width:100%" ></a> --%>
+  <div class="row">  
+    <div class="col-sm-12">
+      <c:forEach items="${suppliers}" var="supplier"> 
+      <div align="center" class="col-sm-2 panel-body">${supplier.sid}</div>
+      <div align="center" class="col-sm-2 panel-body">${supplier.sname}</div>
+      <div align="center" class="col-sm-2 panel-body">${supplier.saddress}</div>
+      <div align="center" class="col-sm-2 panel-body">${supplier.semail}</div>
+      <div align="center" class="col-sm-2 panel-body">${supplier.scontact}</div>
+      <div align="center" class="col-sm-2 panel-body">
+      <a href="updatesupplier?id=${supplier.sid}" type="button" class="btn btn-warning btn-sm "  ><span class="glyphicon glyphicon-pencil"></span></a>
+      <a href="deletesupplier?id=${supplier.sid}" type="button" class="btn btn-danger btn-sm " ><span class="glyphicon glyphicon-trash"></span></a>
+      </div>
+      <div class="alert alert-success alert-dismissable">
+ 			 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  			<strong>Success!</strong> Indicates a successful or positive action.
+	</div>
+      </c:forEach>
+      </div></div>
+</div>
      
      
 <!--  <div class="container"> 

@@ -51,9 +51,7 @@ public class SupplierModel {
 		public void setSaddress(String saddress) {
 			this.saddress = saddress;
 		}
-		
-
-		
 	
-}
+
+	}
 	

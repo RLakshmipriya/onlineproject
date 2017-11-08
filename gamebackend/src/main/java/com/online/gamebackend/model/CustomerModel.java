@@ -17,12 +17,16 @@ public class CustomerModel {
 	private String name;
 	@Column(name="Customer_email")
 	private String email;
+	@Column(name="customer_address")
+	private String address;
 	@Column(name="Customer_contact")
-	private int contact;
+	private String contact;
 	@Column(name="Customer_password")
 	private String password;
-	@Column(name="Customer_place")
-	private String place;
+	@Column(name="Customer_confirmpassword")
+	private String confirmpassword;
+	@Column(name="customer_role")
+	private String role;
 	public int getId() {
 		return id;
 	}
@@ -41,24 +45,38 @@ public class CustomerModel {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getContact() {
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getContact() {
 		return contact;
 	}
-	public void setContact(int contact) {
+	public void setContact(String contact) {
 		this.contact = contact;
 	}
-	public String getpassword() {
+	public String getPassword() {
 		return password;
 	}
-	public void setpassword(String password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getPlace() {
-		return place;
+	public String getConfirmpassword() {
+		return confirmpassword;
 	}
-	public void setPlace(String place) {
-		this.place = place;
+	public void setConfirmpassword(String confirmpassword) {
+		this.confirmpassword = confirmpassword;
 	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
+	
 	
 
 }
