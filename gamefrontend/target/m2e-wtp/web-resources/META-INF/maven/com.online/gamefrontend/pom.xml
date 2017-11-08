@@ -35,8 +35,24 @@
   <artifactId>gamebackend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
    </dependency>
-  </dependencies>
-  <build>
+   <dependency>
+  		<groupId>org.springframework.security</groupId>
+  		<artifactId>spring-security-config</artifactId>
+  		<version>4.0.3.RELEASE</version>
+  		<exclusions>
+  			<exclusion>
+  				<artifactId>spring-asm</artifactId>
+  				<groupId>org.springframework</groupId>
+  			</exclusion>
+  		</exclusions>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework.security</groupId>
+  		<artifactId>spring-security-web</artifactId>
+  		<version>4.0.3.RELEASE</version>
+  	</dependency>
+ </dependencies>
+   <build>
     <finalName>gamefrontend</finalName>
   </build>
 </project>

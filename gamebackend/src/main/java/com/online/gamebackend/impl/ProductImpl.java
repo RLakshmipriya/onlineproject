@@ -55,8 +55,8 @@ public class ProductImpl implements ProductDao{
 		Criteria criteria=session.createCriteria(ProductModel.class);
 		criteria.add(Restrictions.eq("pid",new Integer(pid)));
 		List list=criteria.list();
-		/*session.getTransaction().commit();
-		session.close();*/
+		session.getTransaction().commit();
+		session.close();
 		if(!list.isEmpty()){
 			return (ProductModel)list.get(0);
 		}else{
@@ -66,11 +66,13 @@ public class ProductImpl implements ProductDao{
 
 	public List<ProductModel> findAll() {
 		Session session=sessionFactory.openSession();
+		session.beginTransaction();
 		String hql = "FROM ProductModel";
 		Query query = session.createQuery(hql);
-		List<ProductModel> results =  query.list();
+		List<ProductModel> results = (List<ProductModel>) query.list();
 		System.out.println(results);
-		//session.getTransaction().commit();
+		session.getTransaction().commit();
+		session.close();
 		return results;
 		
 	}

@@ -19,11 +19,12 @@ public class logincontroller {
 	private CustomerDao customerDao;
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public ModelAndView login(){
-		ModelAndView mv=new ModelAndView("login","command",new CustomerModel());
+		/*ModelAndView mv=new ModelAndView("login","command",new CustomerModel());*/
+		ModelAndView mv=new ModelAndView("login");
 		return mv;
 	}
 	
-	@RequestMapping(value="/login", method=RequestMethod.POST)
+/*	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public ModelAndView validate(HttpServletRequest request, HttpServletResponse response){		
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
@@ -35,7 +36,7 @@ public class logincontroller {
 			session.setAttribute("name", customer.getName());
 			session.setAttribute("email", customer.getEmail());
 			
-			if(email=="adminsakthi@example.com") {
+			if(email=="ezhil@gmail.com") {
 				mv=new ModelAndView("redirect:stock");
 			}
 			else {
@@ -48,7 +49,7 @@ public class logincontroller {
 			//mv.getModelMap().addAttribute("customer", customer);
 		}			
 		return mv;
-	}
+	}*/
 	@RequestMapping(value="/logout", method=RequestMethod.GET)
 	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session=request.getSession(false);

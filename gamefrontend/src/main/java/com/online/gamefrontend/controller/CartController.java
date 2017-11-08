@@ -15,7 +15,7 @@ import com.online.gamebackend.model.ProductModel;
 public class CartController {
 	@Autowired
 	private ProductDao productDao;
-	@RequestMapping(value="/cart", method=RequestMethod.GET)
+	/*@RequestMapping(value="/cart", method=RequestMethod.GET)
 	public ModelAndView getMyProductById(Model model,@RequestParam("id") int pid) {
 		ModelAndView mv=new ModelAndView("cart");
 		ProductModel product =productDao.findById(pid);
@@ -28,5 +28,5 @@ public class CartController {
 		ProductModel product =productDao.findById(pid);
 		mv.getModelMap().addAttribute("product", product);
 		return mv;
-	}
+	}*/
 }

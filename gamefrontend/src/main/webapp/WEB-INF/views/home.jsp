@@ -52,62 +52,9 @@
       <span class="sr-only">Next</span>
     </a>
 </div>
- Page Header -->
-    <header class="masthead"><!--  style="background-image: url('./resources/image/home-bg.jpg')"> -->
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="site-heading">
-            </div>
-            </div>
-            </div>
-            </div>
-            </header>
-              
-			  <h2 class="sub-title">Currently Your Basket Contains Truly Awesome Products(s).</h2>
-			<div class="container">
-			</div>
-			
-			<table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-	  <tr>
-        <td>Dead Space 3 Limited Edition</td>
-        <td>20.00</td>
-      </tr>
-      <tr>
-        <td>Hitman Absolution Professional Edition</td>
-        <td>10.00</td>
-      </tr>
-      <tr>
-        <td>Operation Flashpoint:Red river </td>
-        <td>11.12</td>
-      </tr>
-	  <tr>
-        <td>A Long Walk To Freedom</td>
-        <td>23.00</td>
-      </tr>
-	 
-	  <tr>
-        <td>Politically Incorrect</td>
-        <td>22.00</td>
-      </tr>
-	  <tr>
-        <td>The Bone Bed</td>
-        <td>19.99</td>
-      </tr>
-    </tbody>
+
   
-</table>
-  
-    
-  
+    page header 
   <div class="row">
     <div class="col-sm-4">
       <img src="./resources/image/pic2.jpg" class="img-responsive" style="width:100%" alt="Image">

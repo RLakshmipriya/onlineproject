@@ -19,6 +19,7 @@ import com.online.gamebackend.model.CategoryModel;
 import com.online.gamebackend.model.ProductModel;
 import com.online.gamebackend.model.SupplierModel;
 
+
 @Controller
 public class ProductsController {
 	
@@ -62,7 +63,7 @@ public class ProductsController {
 	*/
 	/*Add Products*/
 	
-	@RequestMapping(value="admin/addproduct", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/addproduct", method=RequestMethod.GET)
 	public ModelAndView viewAddProductModel(){
 		ModelAndView mv=new ModelAndView("add","command",new ProductModel());
 		mv.getModelMap().addAttribute("categories", categoryDao.findAll());
@@ -72,7 +73,7 @@ public class ProductsController {
 		return mv;
 		
 }
-	@RequestMapping(value="admin/addproduct", method=RequestMethod.POST)
+	@RequestMapping(value="/admin/addproduct", method=RequestMethod.POST)
 	// public ModelAndView addProduct(@ModelAttribute("product") Product product, HttpServletRequest request){
 	 public ModelAndView addProductModel(HttpServletRequest request, HttpServletResponse response){
 		CategoryModel category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
@@ -89,14 +90,14 @@ public class ProductsController {
 		ModelAndView mv=new ModelAndView("stock");
 		return mv;
 	 }
-	@RequestMapping(value="admin/deleteproduct", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/deleteproduct", method=RequestMethod.GET)
 	public ModelAndView viewDelete(@RequestParam("id") int pid){
 		ModelAndView mv=new ModelAndView("redirect:stock","command",new ProductModel());
 		productDao.delete(pid);
 		mv.getModelMap().addAttribute("stock", productDao.findAll());
 		return mv;
 }
-	@RequestMapping(value="admin/updateproduct", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/updateproduct", method=RequestMethod.GET)
 	public ModelAndView viewUpdateProduct(Model model,@RequestParam("id") int pid){
 		ModelAndView mv=new ModelAndView("update");
 		ProductModel product=productDao.findById(pid);
@@ -105,7 +106,7 @@ public class ProductsController {
 		mv.getModelMap().addAttribute("supplier", supplierDao.findAll());
 		return mv;
 }
-	@RequestMapping(value="admin/updateproduct", method=RequestMethod.POST)
+	@RequestMapping(value="/admin/updateproduct", method=RequestMethod.POST)
 	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 	public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv=new ModelAndView("redirect:stock");
