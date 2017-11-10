@@ -77,6 +77,10 @@ public class ProductModel {
 	public void setPimg(String pimg) {
 		this.pimg = pimg;
 	}
+	public void setCid(CategoryModel category) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	

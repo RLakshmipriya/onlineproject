@@ -95,6 +95,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="container">
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     	<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-add">
@@ -156,10 +157,12 @@
 											
 										</div>
 									</div>
+									
 								</form>
 </div>
 
        <div class="container">
+       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     	<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-add">
@@ -193,6 +196,7 @@
 											
 										</div>
 									</div>
+									
 								</form>
 </div>
 </div>
@@ -200,6 +204,7 @@
 </div>
 </div>
    <div class="container">
+   <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     	<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-add">
@@ -207,6 +212,7 @@
 						<div class="row">
 							<div class="col-sm-6 col-sm-offset-3">
 								<a href="#" class="active" >Add Supplier</a>
+								
 							</div>
 						</div>
 					</div>	</div></div></div>
@@ -238,6 +244,7 @@
 											
 										</div>
 									</div>
+									
 								</form>
 </div>
 </div>

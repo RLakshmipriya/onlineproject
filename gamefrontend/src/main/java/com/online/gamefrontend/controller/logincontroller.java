@@ -23,8 +23,7 @@ public class logincontroller {
 		ModelAndView mv=new ModelAndView("login");
 		return mv;
 	}
-	
-/*	@RequestMapping(value="/login", method=RequestMethod.POST)
+	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public ModelAndView validate(HttpServletRequest request, HttpServletResponse response){		
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
@@ -36,7 +35,40 @@ public class logincontroller {
 			session.setAttribute("name", customer.getName());
 			session.setAttribute("email", customer.getEmail());
 			
-			if(email=="ezhil@gmail.com") {
+			if(email=="admin@example.com") {
+				mv=new ModelAndView("redirect:stock");
+			}
+			else {
+				mv=new ModelAndView("redirect:home");
+			}
+			return mv;
+		}
+		return mv;
+
+	}
+		
+	
+		@RequestMapping(value="/failure", method=RequestMethod.GET)
+		public ModelAndView fail(){
+			/*ModelAndView mv=new ModelAndView("login","command",new CustomerModel());*/
+			ModelAndView mv=new ModelAndView("failure");
+			return mv;
+		}
+		
+	
+	/*@RequestMapping(value="/login", method=RequestMethod.POST)
+	public ModelAndView validate(HttpServletRequest request, HttpServletResponse response){		
+		String email=request.getParameter("email");
+		String password=request.getParameter("password");
+		CustomerModel customer=customerDao.findByEmail(email,password);	
+		//request.setAttribute("customer", customer );
+		ModelAndView mv=null;
+		if(customer!=null){
+			HttpSession session=request.getSession(true);
+			session.setAttribute("name", customer.getName());
+			session.setAttribute("email", customer.getEmail());
+			
+			if(email=="admin@example.com") {
 				mv=new ModelAndView("redirect:stock");
 			}
 			else {

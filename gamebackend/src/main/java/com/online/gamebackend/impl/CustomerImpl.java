@@ -25,7 +25,7 @@ private SessionFactory sessionFactory;
 	}
 	
 
-	public void delete(int id) {
+	public void delete(String id) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -81,10 +81,18 @@ private SessionFactory sessionFactory;
 		}
 
 
-		public CustomerModel findById(int id) {
+		public CustomerModel findById(String id) {
 			// TODO Auto-generated method stub
 			return null;
 		}
+
+
+		public void delete(int id) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
 
 
 		

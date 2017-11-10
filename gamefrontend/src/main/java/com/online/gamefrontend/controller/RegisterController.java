@@ -33,6 +33,7 @@ public class RegisterController {
 		customer.setConfirmpassword(request.getParameter("confirmpassword"));
 		customer.setRole("ROLE_USER");
 		ModelAndView mv=new ModelAndView("login");
+		customer.setEnabled(true);
 		customerDao.save(customer);
 		return mv;
 	 }

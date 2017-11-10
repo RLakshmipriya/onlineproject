@@ -12,7 +12,7 @@
     <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading" >${product.pname}</div>
-        <div class="panel-body"><img src="./resource/images/${product.pimg}" class="img-responsive" style="width:100%" height="auto" ></div>
+        <div class="panel-body"><img src="./resources/image/${product.pimg}" class="img-responsive" style="width:100%" height="auto" ></div>
         <div class="panel-footer">Price:${product.pprice}</div>
 			</div>
     </div>

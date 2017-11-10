@@ -32,13 +32,13 @@ public class ProductsController {
 
 	@RequestMapping(value="/products" , method=RequestMethod.GET)
 	public ModelAndView products() {
-		ModelAndView mv=new ModelAndView ("products");
+		ModelAndView mv=new ModelAndView ();
 		List<ProductModel> products=productDao.findAll();
 		mv.getModelMap().addAttribute("products", products);
 		return mv;
 	}
 	@RequestMapping(value="/products" , method=RequestMethod.POST)
-	public ModelAndView viewProducts() {
+	public ModelAndView Products() {
 		ModelAndView mv=new ModelAndView ("products");
 		List<ProductModel> products=productDao.findAll();
 		mv.getModelMap().addAttribute("products", products);
@@ -75,7 +75,7 @@ public class ProductsController {
 }
 	@RequestMapping(value="/admin/addproduct", method=RequestMethod.POST)
 	// public ModelAndView addProduct(@ModelAttribute("product") Product product, HttpServletRequest request){
-	 public ModelAndView addProductModel(HttpServletRequest request, HttpServletResponse response){
+	 public ModelAndView addProduct(HttpServletRequest request, HttpServletResponse response){
 		CategoryModel category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
 		SupplierModel supplier=supplierDao.findById(Integer.parseInt(request.getParameter("sid")));
 		ProductModel product =new ProductModel();
@@ -84,12 +84,13 @@ public class ProductsController {
 		product.setPdescription(request.getParameter("pdescription"));
 		product.setPprice(Float.parseFloat(request.getParameter("pprice"))) ;
 		product.setPimg(request.getParameter("pimg"));
-		product.setCat(category);
+		product.setCid(category);
 		product.setSid(supplier);
 		productDao.save(product);
 		ModelAndView mv=new ModelAndView("stock");
 		return mv;
 	 }
+	
 	@RequestMapping(value="/admin/deleteproduct", method=RequestMethod.GET)
 	public ModelAndView viewDelete(@RequestParam("id") int pid){
 		ModelAndView mv=new ModelAndView("redirect:stock","command",new ProductModel());
@@ -119,13 +120,14 @@ public class ProductsController {
 		product.setPdescription(request.getParameter("pdescription"));
 		product.setPprice(Float.parseFloat(request.getParameter("pprice"))) ;
 		product.setPimg(request.getParameter("pimg"));
-		product.setCat(category);
+		product.setCid(category);
 		product.setSid(supplier);
 		productDao.update(product);
 		mv.getModelMap().addAttribute("stock", productDao.findAll());
 		return mv;
 		
 	 }
+	
 }
 	
 	

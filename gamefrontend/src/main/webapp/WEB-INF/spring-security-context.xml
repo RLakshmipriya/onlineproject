@@ -8,16 +8,37 @@
 							http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd
 							http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 	<security:http auto-config="true">
+		<!-- <security:intercept-url pattern="/product/**" access="ROLE_ADMIN" /> -->
 		<security:intercept-url pattern="/admin/*" access="hasRole('ROLE_ADMIN')" />
 		
-		<security:form-login login-page="/login" default-target-url="/" authentication-failure-url="/"/>		
-		<security:logout logout-url="/logout"/>		
+		<security:form-login login-page="/login" default-target-url="/" authentication-failure-url="/failure"/>		
+		<security:logout logout-url="/"/>		
+		<!-- <security:csrf disabled="true"/> -->
 	</security:http>
-		<security:authentication-manager>
+	 <bean id="dataSource"
+    class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+    <property name="driverClassName" value="org.h2.Driver" />
+    <property name="url" value="jdbc:h2:tcp://localhost/~/flora" />
+    <property name="username" value="sa" />
+    <property name="password" value="" />
+   </bean>	
+   <security:authentication-manager>
+		<!--  <security:authentication-manager>
 		<security:authentication-provider>
 			<security:user-service>
 				<security:user name="admin@example.com" password="admin" authorities="ROLE_ADMIN" />
 			</security:user-service>
 		</security:authentication-provider>
+	</security:authentication-manager> --> 
+	
+	<security:authentication-provider>
+		<security:jdbc-user-service data-source-ref="dataSource"
+		  users-by-username-query=
+		    "select customer_email, customer_password, customer_enabled from customer where customer_email=?"
+		  authorities-by-username-query=
+		    "select customer_email, customer_role from customer where customer_email=? and (customer_role = 'ROLE_ADMIN' OR customer_role = 'ROLE_USER') " />
+	  </security:authentication-provider>
+	  
 	</security:authentication-manager>
 </beans>

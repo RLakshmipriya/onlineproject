@@ -15,7 +15,7 @@ public class CustomerModel {
 	private int id;
 	@Column(name="Customer_name")
 	private String name;
-	@Column(name="Customer_email")
+	@Column(name="Customer_email",unique=true)
 	private String email;
 	@Column(name="customer_address")
 	private String address;
@@ -27,6 +27,8 @@ public class CustomerModel {
 	private String confirmpassword;
 	@Column(name="customer_role")
 	private String role;
+	@Column(name="customer_enabled")
+	private boolean enabled;
 	public int getId() {
 		return id;
 	}
@@ -75,6 +77,13 @@ public class CustomerModel {
 	public void setRole(String role) {
 		this.role = role;
 	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+	
 	
 	
 	

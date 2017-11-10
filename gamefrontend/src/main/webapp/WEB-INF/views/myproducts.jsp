@@ -21,16 +21,16 @@ $(document).ready(function(){
     <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading" id="prod1">${p.pname}</div>
-        <div class="panel-body"><a href="myprodesc?id=${p.pid}"><img src="./resource/images/${p.pimg}" class="img-responsive" style="width:100%" ></a></div>
+        <div class="panel-body"><a href="myproduct?id=${p.pid}"><img src="./resources/image/${p.pimg}" class="img-responsive" style="width:100%" ></a></div>
         <div class="panel-footer">Price:${p.pprice}
 			<a href="myproduct?id=${p.pid}" type="button" action="myproduct" method="GET" class="btn btn-warning btn-sm btn-block">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span>
 								</a></div>
       </div>
     </div></c:forEach></div></div>
-    <%-- <div class="col-sm-4"> 
+     <div class="col-sm-4"> 
       <div class="panel panel-danger">
         <div class="panel-heading" id="prod2">Hitman Absolution Professional Edition</div>
-        <div class="panel-body"><a href="myprodesc"><img src="./resource/images/HAPE1.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-body"><a href="myproduct"><img src="./resources/image/pic3.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <div class="panel-footer">Price: $10.00
 		<a href="#" type="button" class="btn btn-warning btn-sm btn-block">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span>
 								</a></div>
@@ -39,7 +39,7 @@ $(document).ready(function(){
     <div class="col-sm-4"> 
       <div class="panel panel-success">
         <div class="panel-heading">OPERATION FLASHPOINT RED RIVER</div>
-        <div class="panel-body"><a href="myprodesc"><img src="./resource/images/OFRR.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-body"><a href="myproduct"><img src="./resources/image/pic4.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <div class="panel-footer">Price: $11.12
 		<a href="#" type="button" class="btn btn-warning btn-sm btn-block">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span>
 								</button></a></div>
@@ -52,7 +52,7 @@ $(document).ready(function(){
     <div class="col-sm-4">
       <div class="panel panel-primary">
       <div class="panel-heading">A LONG WALK TO FREEDOM</div>
-        <div class="panel-body"><a href="myprodesc"><img src="./resource/images/lf.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-body"><a href="myprodesc"><img src="./resources/image/pic5.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <div class="panel-footer">Price: $23.00
 		<a href="#" type="button" class="btn btn-warning btn-sm btn-block">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span>
 								</a></div>
@@ -61,7 +61,7 @@ $(document).ready(function(){
     <div class="col-sm-4"> 
       <div class="panel panel-danger">
         <div class="panel-heading">POLITICALLY INCORRECT</div>
-        <div class="panel-body"><a href="myprodesc"><img src="./resource/images/pi.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-body"><a href="myproduct"><img src="./resources/image/pic6.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <div class="panel-footer">Price: $22.00
 		<a href="#"type="button" class="btn btn-warning btn-sm btn-block">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span>
 								</a></div>
@@ -70,7 +70,7 @@ $(document).ready(function(){
     <div class="col-sm-4"> 
       <div class="panel panel-success">
 	  <div class="panel-heading">THE BONE BED</div>
-        <div class="panel-body"><a href="myprodesc"><img src="./resource/images/bb.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-body"><a href="myproduct"><img src="./resources/image/pic7.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <div class="panel-footer">Price: $19.99
 		<a href="#" type="button" class="btn btn-warning btn-sm btn-block">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span>
 								</a></div>
@@ -85,7 +85,7 @@ $(document).ready(function(){
 				<c:forEach items="${products}" var="p">
 				<li>
 						<div class="product-image">
-							<img src="./resource/images/${p.pimg}" alt="" />
+							<img src="./resources/image/${p.pimg}" alt="" />
 						</div>
 						<div class="product-description" data-name="${p.pname}"
 							data-price="${p.pprice}">
@@ -98,7 +98,7 @@ $(document).ready(function(){
 								</div>
 								<p>
 									<input type="submit" value="Add to cart" class="btn" />
-									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="myprodesc?id=${p.pid}"
+									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="myproduct?id=${p.pid}"
 										role="button" class="btn btn-warning">Details</a>
 								</p>
 							</form>
@@ -109,7 +109,7 @@ $(document).ready(function(){
 				</ul>
 			</div>
 		</div>
- --%>
+ 
     
     <%@include file="footer.jsp" %>
 
