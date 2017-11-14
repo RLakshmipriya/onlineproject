@@ -1,6 +1,5 @@
 package com.online.gamebackend.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,11 +14,11 @@ public class ProductModel {
 	@GeneratedValue
 	@Column(name="product_id")
 	private int  pid;
-	@ManyToOne(cascade=CascadeType.ALL)	
+	@ManyToOne	
 	private SupplierModel sid;
 	@Column(name="product_name")
 	private String pname;
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	private CategoryModel cid;
 	@Column(name="product_description")
 	private String  pdescription;
@@ -50,7 +49,7 @@ public class ProductModel {
 	public CategoryModel getCid() {
 		return cid;
 	}
-	public void setCat(CategoryModel cid) {
+	public void setCid(CategoryModel cid) {
 		this.cid = cid;
 	}
 	public String getPdescription() {
@@ -77,11 +76,6 @@ public class ProductModel {
 	public void setPimg(String pimg) {
 		this.pimg = pimg;
 	}
-	public void setCid(CategoryModel category) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	
 	
 }

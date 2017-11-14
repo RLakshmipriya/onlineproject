@@ -1,6 +1,103 @@
 package com.online.gamebackend.model;
+import java.io.Serializable; 
 
-import java.io.Serializable;
+//import java.math.BigDecimal;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+//import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="CartItems")
+public class CartItem implements Serializable{
+	private static final long serialVersionUID = 1L;
+
+
+	@Id
+	@GeneratedValue
+	private int id;
+	
+	@OneToOne
+	private ProductModel product;
+	
+	@Column(name = "cart_id")
+	private int cartId;	
+	
+	@Column(name = "item_count")
+	private int itemCount;
+	
+	private double total;
+	
+	@Column(name = "item_price")
+	private double itemPrice;
+	
+	@Column(name = "is_available")
+	private boolean available = true;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public ProductModel getProduct() {
+		return product;
+	}
+
+	public void setProduct(ProductModel product) {
+		this.product = product;
+	}
+
+	public int getCartId() {
+		return cartId;
+	}
+
+	public void setCartId(int cartId) {
+		this.cartId = cartId;
+	}
+
+	public int getItemCount() {
+		return itemCount;
+	}
+
+	public void setItemCount(int itemCount) {
+		this.itemCount = itemCount;
+	}
+
+	public double getTotal() {
+		return total;
+	}
+
+	public void setTotal(double total) {
+		this.total = total;
+	}
+
+	public double getItemPrice() {
+		return itemPrice;
+	}
+
+	public void setItemPrice(double itemPrice) {
+		this.itemPrice = itemPrice;
+	}
+
+	public boolean isAvailable() {
+		return available;
+	}
+
+	public void setAvailable(boolean available) {
+		this.available = available;
+	}
+
+	
+	
+}
+/*import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -76,4 +173,4 @@ public class CartItem implements Serializable {
 		public void setAvailable(boolean available) {
 			this.available = available;
 		}
-}
+}*/

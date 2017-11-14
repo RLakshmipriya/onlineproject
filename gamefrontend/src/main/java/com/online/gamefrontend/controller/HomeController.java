@@ -4,6 +4,7 @@ import java.security.Principal;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,16 +24,16 @@ public class HomeController {
 	private ProductDao productDao;
 	
 	
-//	@RequestMapping(value="/", method=RequestMethod.GET)
-//	public ModelAndView index(){
-//		ModelAndView mv=new ModelAndView("home");
-//		return mv;
-//	}
-//	@RequestMapping(value="/home", method=RequestMethod.GET)
-//	public ModelAndView showHome(){
-//		ModelAndView mv=new ModelAndView("home");
-//		return mv;
-//	}
+	/*@RequestMapping(value="/", method=RequestMethod.GET)
+	public ModelAndView index(){
+		ModelAndView mv=new ModelAndView("home");
+		return mv;
+	}*/
+	@RequestMapping(value="/home", method=RequestMethod.GET)
+	public ModelAndView showHome(){
+		ModelAndView mv=new ModelAndView("home");
+		return mv;
+	}
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView index(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv=new ModelAndView("home");
@@ -41,14 +42,13 @@ public class HomeController {
 		if(principal!=null){
 			customer=customerDao.findById(principal.getName());
 		}
-		mv.getModelMap().addAttribute("customer", customer);
+		HttpSession session=request.getSession(false);
+		if(session!=null)
+		session.setAttribute("customer", customer);
+		//mv.getModelMap().addAttribute("customer", customer);
 		return mv;
 	}
-	@RequestMapping(value="/home", method=RequestMethod.GET)
-	public ModelAndView showHome(){
-		ModelAndView mv=new ModelAndView("home");
-		return mv;
-	}
+	
 	@RequestMapping(value="/accessDenied", method=RequestMethod.GET)
 	public ModelAndView showDenial(){
 		ModelAndView mv=new ModelAndView("accessdenied");

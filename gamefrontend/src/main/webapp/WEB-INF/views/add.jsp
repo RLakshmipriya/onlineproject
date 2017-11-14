@@ -95,7 +95,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="container">
-<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
     	<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-add">
@@ -110,49 +110,49 @@
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
 						<form action="addproduct" method="POST" role="form" style="display: block;">
-									
+						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>			
 									
 									<div class="form-group">
-										<input type="text" name="pname" id="pname" tabindex="1" class="form-control" placeholder="Product Name" >
+									<input type="text" name="pname" id="pname" tabindex="1" class="form-control" placeholder="Product Name" >
 									</div>
 									<div class="form-group">
  
- 										 <select   class="form-control" name="sid" id="sid" tabindex="1" placeholder="Select Supplier">
- 										 <option value="" disabled selected> Select Supplier Name</option>
+ 									 <select   class="form-control" name="sid" id="sid" tabindex="1" placeholder="Select Supplier">
+ 									 <option value="" disabled selected> Select Supplier Name</option>
  										 										<!-- <option id="1" value="Puzzles">Puzzles</option>
     																			<option id="2" value="Runner Games">Runner Games</option>
     																			<option id="3" value="Thriller Games">Thriller Games</option>
     																			<option id="4" value="Cookery">Cookery</option> -->
-    									 <c:forEach items="${supplier}" var="s">
-      										<option value="${s.sid}">${s.sname}</option>
-										</c:forEach>
-    									</select>
+    								 <c:forEach items="${supplier}" var="s">
+      								<option value="${s.sid}">${s.sname}</option>
+									</c:forEach>
+    								</select>
     								</div>
     					<div class="form-group">			 
-  						<select   class="form-control" name="cat" id="cat" tabindex="1" placeholder="Select Category">
- 										<option value="" disabled selected>Select Product Category</option>	
-    						 <c:forEach items="${categories}" var="c">
-      									<option value="${c.cid}">${c.cname}</option>
+  						<select   class="form-control" name="cid" id="cid" tabindex="1" placeholder="Select Category">
+ 						<option value="" disabled selected>Select Product Category</option>	
+    					 <c:forEach items="${categories}" var="c">
+      					<option value="${c.cid}">${c.cname}</option>
 							 </c:forEach>
     					</select></div>
 									<div class="form-group">
-										<input type="text" name="pdescription" id="pdescription" tabindex="1" class="form-control" placeholder="Description" >
+									<input type="text" name="pdescription" id="pdescription" tabindex="1" class="form-control" placeholder="Description" >
 									</div>
 									<div class="form-group">
-										<input type="text" name="pstock" id="pstock" tabindex="1" class="form-control" placeholder="Stock" >
+									<input type="text" name="pstock" id="pstock" tabindex="1" class="form-control" placeholder="Stock" >
 									</div>
 									<div class="form-group">
-										<input type="text" name="pprice" id="pprice" tabindex="1" class="form-control" placeholder="Price">
+									<input type="text" name="pprice" id="pprice" tabindex="1" class="form-control" placeholder="Price">
 									</div>
 									<div class="form-group">
-										<input type="file" name="pimg" id="pimg"" tabindex="1" class="form-control" placeholder="Image">										
+									<input type="file" name="pimg" id="pimg"" tabindex="1" class="form-control" placeholder="Image">										
 									</div>
 													
 																
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6">
-												<input type="submit" name="addProductBut" tabindex="4" class="form-control btn btn-add" value="Add">
+											<input type="submit" name="addProductBut" tabindex="4" class="form-control btn btn-add" value="Add">
 											</div>
 											
 										</div>
@@ -162,7 +162,7 @@
 </div>
 
        <div class="container">
-       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+      
     	<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-add">
@@ -177,7 +177,7 @@
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
 						<form action="addcategory" method="POST" style="display: block;">
-									
+						 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 									
 									<div class="form-group">
 										<input type="text" name="cname"id="cname" tabindex="1"  class="form-control" placeholder="category Name">
@@ -204,8 +204,7 @@
 </div>
 </div>
    <div class="container">
-   <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-    	<div class="row">
+      	<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-add">
 					<div class="panel-heading">
@@ -220,7 +219,7 @@
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
 						<form action="addsupplier" method="POST" style="display: block;">
-									
+									 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 									<div class="form-group">
 										<input type="text" name="sname" class="form-control" placeholder="Supplier Name" />
 									</div>

@@ -6,7 +6,6 @@
 <body>
 
 <%@include file="navbar.jsp"%>
-<!-- <div id="product"> -->
 <div class="container">  
   <div class="row"><h2>Product Description</h2>
     <div class="col-sm-4">
@@ -25,7 +24,7 @@
 		<!-- <tr><td>Supplier:</td><td>WE ARE GAMES</td></tr> -->
 		<tr><td class="col-sm-2">Price:</td><td align="left">${product.pprice}</td></tr>
 		</table></div>
-        <div class="panel-footer"><a href="products" role="button" class="btn btn-warning btn-sm btn-block">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span>
+        <div class="panel-footer"><a href="addToCart?id=${product.pid}" role="button" class="btn btn-warning btn-sm btn-block">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span>
 						</a></div>
 	</div>
 	<div class="col-sm-offset-5 col-centered"><a href="products"
@@ -36,6 +35,7 @@
 </div>
 </div>
 </div>
+
 <%@include file="footer.jsp" %>
 
 </body>

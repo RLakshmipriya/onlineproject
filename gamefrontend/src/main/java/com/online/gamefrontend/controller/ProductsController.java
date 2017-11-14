@@ -44,6 +44,7 @@ public class ProductsController {
 		mv.getModelMap().addAttribute("products", products);
 		return mv;
 	}
+	
 	@RequestMapping(value="/product", method=RequestMethod.GET)
 	public ModelAndView getMyProductById(Model model,@RequestParam("id") int pid) {
 		ModelAndView mv=new ModelAndView("product");

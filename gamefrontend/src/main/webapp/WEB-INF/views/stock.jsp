@@ -17,21 +17,24 @@
       <div class="col-sm-2 panel-heading">Price</div>
       <div class="col-sm-2 panel-heading">Action</div>
       </div></div></div>
-       <div class="row">  
-    <div class="col-sm-12">
+        
+    
       <c:forEach items="${products}" var="p"> 
+      <div class="row"> 
+      <div class="col-sm-12">
       <div class="col-sm-2 panel-body">${p.pid}</div>
       <div class="col-sm-2 panel-body">${p.pname}</div>
       <div class="col-sm-2 panel-body">${p.pdescription}</div>
       <div class="col-sm-2 panel-body">${p.pstock}</div>
       <div class="col-sm-2 panel-body">${p.pprice}</div>
       <div class="col-sm-2 panel-body">
-      <a href="updateproduct?id=${p.pid}" type="button" class="btn btn-warning btn-sm "  ><span class="glyphicon glyphicon-pencil"></span></a>
+      <a href="updateproduct?id=${p.pid}" type="button" class="btn btn-warning btn-sm "><span class="glyphicon glyphicon-pencil"></span></a>
       <a href="deleteproduct?id=${p.pid}" type="button" class="btn btn-danger btn-sm " ><span class="glyphicon glyphicon-trash"></span></a>
       </div>
-      </c:forEach>
       </div></div>
-     </div> 
+      </c:forEach>
+      
+      </div>
      <div class="container"> 
   <div class="row">  
     <div class="col-sm-12"> 
@@ -55,7 +58,7 @@
       </c:forEach>
       </div></div>
       </div>
-  </div>
+ 
 <div class="container"> 
   <div class="row">  
     <div class="col-sm-12"> 
@@ -67,7 +70,7 @@
       <div align="center" class="col-sm-2 panel-heading">Supplier_Contact</div>
       <div align="center" class="col-sm-2 panel-heading">Action</div>
       </div></div></div>
-      <%-- <a href="view?id=${p.pid}"><img src="./resource/images/${p.pimg}" class="img-responsive" style="width:100%" ></a> --%>
+      <%-- <a href="view?id=${p.pid}"><img src="./resources/image/${p.pimg}" class="img-responsive" style="width:100%" ></a> --%>
   <div class="row">  
     <div class="col-sm-12">
       <c:forEach items="${suppliers}" var="supplier"> 
@@ -89,7 +92,7 @@
 </div>
      
      
-<  <div class="container"> 
+ <%--  <div class="container"> 
   <div class="row">
   <c:forEach items="${products}" var="p">  
     <div class="col-sm-4">
@@ -102,7 +105,7 @@
       </div>
     </div></c:forEach></div></div>
 
-
+ --%>
 <%@include file="footer.jsp" %>
 </body>
 </html>

@@ -34,7 +34,7 @@ public class SupplierController{
 	/*Supplier Page-stock*/
 		
 	@RequestMapping(value="/stock" , method=RequestMethod.GET)
-	public ModelAndView myProducts() {
+	public ModelAndView MyProducts() {
 		ModelAndView mv=new ModelAndView ("stock");
 		List<ProductModel> products=productDao.findAll();
 		List<CategoryModel> categories=categoryDao.findAll();
@@ -94,7 +94,7 @@ public class SupplierController{
 		
 }
 		
-	@RequestMapping(value="admin/addsupplier", method=RequestMethod.POST)
+	@RequestMapping(value="/admin/addsupplier", method=RequestMethod.POST)
 	 public ModelAndView addSupplier(@ModelAttribute("supplier") SupplierModel supplier){
 		supplierDao.save(supplier);
 		ModelAndView mv=new ModelAndView("redirect:stock");

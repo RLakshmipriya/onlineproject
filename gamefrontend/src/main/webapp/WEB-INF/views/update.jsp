@@ -105,7 +105,10 @@
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
 						<form id="update" action="updateproduct" method="POST" role="form" style="display: block;">
-						<input type="hidden" name="pid" value="${product.pid}" />									
+						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>	
+						
+						<input type="hidden" name="pid" value="${product.pid}" />	
+								
 									
 									<div class="form-group">
 										<select   class="form-control" name="sid" id="sid" tabindex="1" >								
@@ -188,7 +191,7 @@
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
 						<form id="update" action="updatecategory" method="POST" role="form" style="display: block;" >
-									
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 									<input type="hidden" name="cid" value="${category.cid}" />
 									<div class="form-group">
 										<input type="text" name="cname" id="cname" tabindex="1" class="form-control" placeholder="Category Name" value="${category.cname}">
@@ -227,7 +230,7 @@
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
 						<form id="update" action="updatesupplier" method="POST" role="form" style="display: block;" >
-									
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 									<input type="hidden" name="id" value="${supplier.sid}" />
 									<div class="form-group">
 										<input type="text" name="sname" id="sname" tabindex="1" class="form-control" placeholder="Supplier Name" value="${supplier.sname}">
