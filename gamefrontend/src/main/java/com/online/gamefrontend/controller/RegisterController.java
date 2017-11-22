@@ -32,9 +32,10 @@ public class RegisterController {
 		customer.setPassword(request.getParameter("password"));
 		customer.setConfirmpassword(request.getParameter("confirmpassword"));
 		customer.setRole("ROLE_USER");
-		ModelAndView mv=new ModelAndView("login");
 		customer.setEnabled(true);
+		ModelAndView mv=new ModelAndView("login");
 		customerDao.save(customer);
 		return mv;
 	 }
+	
 }

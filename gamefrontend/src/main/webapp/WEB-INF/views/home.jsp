@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<%@include file="header.jsp" %>
+<%@include file="header.jsp"%>
 
-<style>.carousel-inner img {
+<%@include file="navbar.jsp"%>
+<style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
       width: 100%; /* Set width to 100% */
       margin: auto;
       min-height:200px;
@@ -13,9 +27,8 @@
     .carousel-caption {
       display: none; 
     }
-  }</style>
-  <body>
-<%@include file="navbar.jsp" %>
+  }
+  </style>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -29,14 +42,12 @@
         <img src="./resources/image/img1.jpg" alt="Image">
         <div class="carousel-caption">
 		<img src="./resources/image/LOGO.png" style="width:304px;height:228px;">
-          <h3>NIIT E-COMMERCE PROJECT</h3>
-          <p>WELCOME TO THE HOME OF ALL THINGS NIIT</p>
-        </div>      
+	 </div>      
       </div>
       <div class="item">
         <img src="./resources/image/img3.jpg" alt="Image">
         <div class="carousel-caption">
-          <h3>NIIT </h3>
+       
          
         </div>      
       </div>
@@ -52,26 +63,28 @@
       <span class="sr-only">Next</span>
     </a>
 </div>
+
+<body>
 <div class="container">    
   <div class="row">
     <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading">Dead Space 3 Limited Edition</div>
-        <div class="panel-body"><a href="product"><img src="./resources/image/pic2.jpg" class="img-responsive" style="width:100%" alt="Image" ></a></div>
+        <div class="panel-body"><a href="productdesc"><img src="./resources/image/pic2.jpg" class="img-responsive" style="width:100%" alt="Image" ></a></div>
         <div class="panel-footer">Price: $20.00</div>
       </div>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-danger">
         <div class="panel-heading">Hitman Absolution Professional Edition</div>
-        <div class="panel-body"><a href="product"><img src="./resources/image/pic3.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-body"><a href="productdesc"><img src="./resources/image/pic3.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <div class="panel-footer">Price: $10.00</div>
       </div>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-success">
         <div class="panel-heading">OPERATION FLASHPOINT RED RIVER</div>
-        <div class="panel-body"><a href="product"><img src="./resources/image/pic4.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-body"><a href="productdesc"><img src="./resources/image/pic4.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <div class="panel-footer">Price: $11.12</div>
       </div>
     </div>
@@ -83,30 +96,29 @@
     <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading">A LONG WALK TO FREEDOM</div>
-        <div class="panel-body"><a href="product"><img src="./resources/image/pic5.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-body"><a href="productdesc"><img src="./resources/image/pic5.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <div class="panel-footer">Price: $23.00</div>
       </div>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-danger">
         <div class="panel-heading">POLITICALLY INCORRECT</div>
-        <div class="panel-body"><a href="product"><img src="./resources/image/pic6.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-body"><a href="productdesc"><img src="./resources/image/pic6.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <div class="panel-footer">Price: $22.00</div>
       </div>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-success">
         <div class="panel-heading">THE BONE BED</div>
-        <div class="panel-body"><a href="product"><img src="./resources/image/pic7.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-body"><a href="productdesc"><img src="./resources/image/pic7.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <div class="panel-footer">Price: $19.99</div>
       </div>
     </div>
   </div>
 </div><br><br>
-  
-     
-  
-<%@include file="footer.jsp" %>
+
+
+<%@include file="footer.jsp"%>
 
 </body>
 </html>

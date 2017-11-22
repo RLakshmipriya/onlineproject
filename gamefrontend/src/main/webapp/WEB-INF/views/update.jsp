@@ -1,19 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="en">
-<%@include file="header.jsp" %>
-<style>
+<%@include file="header.jsp"%>
+	<style>
 	body{
-	    background-color: #525252;
+    background-color: #525252;
 }
 .centered-form{
 	margin-top: 60px;
 }
-
 .centered-form .panel{
 	background: rgba(255, 255, 255, 0.8);
 	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
 }
-
   body {
     pupdateing-top: 90px;
 }
@@ -88,8 +86,18 @@
 }
 </style>
 <body>
+<%@include file="navbar.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page isELIgnored="false" %>
+
+<!-- <div class="modal fade" id="update_user_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Update Products</h4>
+            </div>
+            <div class="modal-body"> -->
 <div class="container">
     	<div class="row">
 			<div class="col-lg-12">
@@ -105,10 +113,7 @@
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
 						<form id="update" action="updateproduct" method="POST" role="form" style="display: block;">
-						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>	
-						
-						<input type="hidden" name="pid" value="${product.pid}" />	
-								
+						<input type="hidden" name="pid" value="${product.pid}" />									
 									
 									<div class="form-group">
 										<select   class="form-control" name="sid" id="sid" tabindex="1" >								
@@ -170,6 +175,7 @@
 											
 										</div>
 									</div>
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 								</form>
 </div>
 </div>
@@ -183,7 +189,7 @@
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-sm-6 col-sm-offset-3">
-								<a href="#" class="active" >Update Category</a>
+								<a href="#" class="active" >Update Products</a>
 							</div>
 						</div>
 					</div>	
@@ -191,7 +197,7 @@
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
 						<form id="update" action="updatecategory" method="POST" role="form" style="display: block;" >
-									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+									
 									<input type="hidden" name="cid" value="${category.cid}" />
 									<div class="form-group">
 										<input type="text" name="cname" id="cname" tabindex="1" class="form-control" placeholder="Category Name" value="${category.cname}">
@@ -210,6 +216,7 @@
 											
 										</div>
 									</div>
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 								</form>
 </div>
 </div>
@@ -230,19 +237,19 @@
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
 						<form id="update" action="updatesupplier" method="POST" role="form" style="display: block;" >
-									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-									<input type="hidden" name="id" value="${supplier.sid}" />
+									
+									<input type="hidden" name="id" value="${suppliers.sid}" />
 									<div class="form-group">
-										<input type="text" name="sname" id="sname" tabindex="1" class="form-control" placeholder="Supplier Name" value="${supplier.sname}">
+										<input type="text" name="sname" id="sname" tabindex="1" class="form-control" placeholder="Supplier Name" value="${suppliers.sname}">
 									</div>
 									<div class="form-group">
-										<input type="text" name="semail" id="semail" tabindex="1" class="form-control" placeholder="Supplier Email" value="${supplier.semail}" >
+										<input type="text" name="semail" id="semail" tabindex="1" class="form-control" placeholder="Supplier Email" value="${suppliers.semail}" >
 									</div>
 									<div class="form-group">
-										<input type="text" name="saddress" id="saddress" tabindex="1" class="form-control" placeholder="Supplier Address" value="${supplier.saddress}">
+										<input type="text" name="saddress" id="saddress" tabindex="1" class="form-control" placeholder="Supplier Address" value="${suppliers.saddress}">
 									</div>
 									<div class="form-group">
-										<input type="text" name="scontact" id="scontact" tabindex="1" class="form-control" placeholder="Supplier Contact" value="${supplier.scontact}" >
+										<input type="text" name="scontact" id="scontact" tabindex="1" class="form-control" placeholder="Supplier Contact" value="${suppliers.scontact}" >
 									</div>
 													
 																
@@ -254,13 +261,14 @@
 											
 										</div>
 									</div>
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 								</form>
 </div>
 </div>
 </div></div></div>
 </div></div>
 
+<%@include file="footer.jsp"%>
 
-<%@include file="footer.jsp" %>
 </body>
 </html>

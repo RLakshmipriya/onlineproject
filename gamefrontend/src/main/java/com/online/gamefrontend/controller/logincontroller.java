@@ -23,6 +23,7 @@ public class logincontroller {
 		ModelAndView mv=new ModelAndView("login","command",new CustomerModel());
 		return mv;
 	}
+	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public ModelAndView validate(HttpServletRequest request, HttpServletResponse response){		
 		String email=request.getParameter("email");

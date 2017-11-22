@@ -89,8 +89,166 @@
 }
 </style>
 <body>
+<%@include file="navbar.jsp"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<div class="container">
+    	<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-add">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<a href="#" class="active" >Add Products</a>
+							</div>
+						</div>
+					</div>	
+					<div class="panel-body">
+    	<div class="row">
+			<div class="col-md-6 col-sm-offset-3">
+						<form id="add"  action="addproduct" method="POST" role="form" style="display: block;" >
+																		
+									<div class="form-group">
+										<select   class="form-control" name="sid" id="sid" tabindex="1" >
+										<option value="" disabled selected> Select Supplier Name</option>
+										<c:forEach items="${supplier}" var="supplier">
+      									<option value="${supplier.sid}">${supplier.sname}</option>
+										</c:forEach>
+    									</select>
+									
+									</div>
+									<div class="form-group">
+										<input type="text" name="pname" id="pname" tabindex="1" class="form-control" placeholder="Product Name" >
+									</div>
+									<div class="form-group">  
+ 										 <select  name="cid" class="form-control" id="cid" tabindex="1" > 										 										
+    									<option value="" disabled selected>Select Product Category</option>										
+    									<c:forEach items="${categories}" var="cat">
+      									<option value="${category.cid}">${category.cname}</option>
+										</c:forEach>
+    									</select>
+    								</div>
+								
+									<div class="form-group">
+										<input type="text" name="pdescription" id="pdescription" tabindex="1" class="form-control" placeholder="Description" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="pstock" id="pstock" tabindex="1" class="form-control" placeholder="Stock" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="pprice" id="pprice" tabindex="1" class="form-control" placeholder="Price">
+									</div>
+									<div class="form-group">
+										<input type="file" name="pimg" id="pimg" tabindex="1" class="form-control" placeholder="Image">
+										
+									</div>
+													
+																
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="submit" name="add-submit" id="add-submit" tabindex="4" class="form-control btn btn-add" value="Add Product">
+											</div>
+											
+										</div>
+									</div>
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+								</form>
+</div>
+</div>
+</div></div></div>
+</div>
+<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-add">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<a href="#" class="active" >Add Category</a>
+							</div>
+						</div>
+					</div>	
+					<div class="panel-body">
+    	<div class="row">
+			<div class="col-md-6 col-sm-offset-3">
+						<form id="add" action="addcategory" method="POST" role="form" style="display: block;" >
+									
+									
+									<div class="form-group">
+										<input type="text" name="cname" id="cname" tabindex="1" class="form-control" placeholder="Category Name" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="cdescription" id="cdescription" tabindex="1" class="form-control" placeholder="Description" >
+									</div>
+									
+													
+																
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="submit" name="add-submit" id="add-submit" tabindex="4" class="form-control btn btn-add" value="Add Category">
+											</div>
+											
+										</div>
+									</div>
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+								</form>
+</div>
+</div>
+</div></div></div>
+</div>
+<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-add">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<a href="#" class="active" >Add Supplier</a>
+							</div>
+						</div>
+					</div>	
+					<div class="panel-body">
+    	<div class="row">
+			<div class="col-md-6 col-sm-offset-3">
+						<form id="add"  action="addsupplier" method="POST" role="form" style="display: block;" >
+									
+									
+									<div class="form-group">
+										<input type="text" name="sname" id="sname" tabindex="1" class="form-control" placeholder="Supplier Name" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="saddress" id="saddress" tabindex="1" class="form-control" placeholder="Supplier Address" >
+									</div>
+									<div class="form-group">
+										<input type="email" name="semail" id="semail" tabindex="1" class="form-control" placeholder="Supplier Email" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="scontact" id="scontact" tabindex="1" class="form-control" placeholder="Supplier Contact" >
+									</div>
+									
+																				
+																
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="submit" name="add-submit" id="add-submit" tabindex="4" class="form-control btn btn-add" value="Add Supplier">
+											</div>
+											
+										</div>
+									</div>
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+								</form>
+</div>
+</div>
+</div></div></div>
+</div>
+</div>
 
+<%@include file="footer.jsp"%>
+
+</body>
+</html>
+<%-- 
 <%@include file="navbar.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -251,4 +409,4 @@
 </div></div>
 <%@include file="footer.jsp" %>
 </body>
-</html>
+</html> --%>

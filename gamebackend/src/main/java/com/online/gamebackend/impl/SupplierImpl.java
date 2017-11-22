@@ -51,8 +51,8 @@ public SupplierModel findById(int id) {
 	Criteria criteria=session.createCriteria(SupplierModel.class);
 	criteria.add(Restrictions.eq("id",new Integer(id)));
 	List list=criteria.list();
-	session.getTransaction().commit();
-	session.close();
+	/*session.getTransaction().commit();
+	session.close();*/
 	if(!list.isEmpty()){
 		return (SupplierModel)list.get(0);
 	}else{

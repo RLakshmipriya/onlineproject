@@ -32,40 +32,29 @@ public class ProductsController {
 
 	@RequestMapping(value="/products" , method=RequestMethod.GET)
 	public ModelAndView products() {
-		ModelAndView mv=new ModelAndView ();
-		List<ProductModel> products=productDao.findAll();
-		mv.getModelMap().addAttribute("products", products);
-		return mv;
-	}
-	@RequestMapping(value="/products" , method=RequestMethod.POST)
-	public ModelAndView Products() {
 		ModelAndView mv=new ModelAndView ("products");
 		List<ProductModel> products=productDao.findAll();
 		mv.getModelMap().addAttribute("products", products);
 		return mv;
 	}
-	
-	@RequestMapping(value="/product", method=RequestMethod.GET)
+	@RequestMapping(value="/products" , method=RequestMethod.POST)
+	public ModelAndView viewProducts() {
+		ModelAndView mv=new ModelAndView ("products");
+		List<ProductModel> products=productDao.findAll();
+		mv.getModelMap().addAttribute("products", products);
+		return mv;
+	}
+	@RequestMapping(value="/productdesc", method=RequestMethod.GET)
 	public ModelAndView getMyProductById(Model model,@RequestParam("id") int pid) {
-		ModelAndView mv=new ModelAndView("product");
+		ModelAndView mv=new ModelAndView("productdesc");
 		ProductModel product =productDao.findById(pid);
 		mv.getModelMap().addAttribute("product", product);
 		return mv;
 	}
 	
-	
-	/*@RequestMapping(value="/product", method=RequestMethod.GET)
-	public ModelAndView getProductById(Model model,@RequestParam("id") int pid) {
-		ModelAndView mv=new ModelAndView("product");
-		ProductModel product =productDao.findById(pid);
-		mv.getModelMap().addAttribute("product", product);
-		return mv;
-	}
-	*/
-	/*Add Products*/
-	
-	@RequestMapping(value="/admin/addproduct", method=RequestMethod.GET)
-	public ModelAndView viewAddProductModel(){
+
+	@RequestMapping(value="admin/addproduct", method=RequestMethod.GET)
+	public ModelAndView viewAddProduct(){
 		ModelAndView mv=new ModelAndView("add","command",new ProductModel());
 		mv.getModelMap().addAttribute("categories", categoryDao.findAll());
 		mv.getModelMap().addAttribute("supplier", supplierDao.findAll());
@@ -74,7 +63,7 @@ public class ProductsController {
 		return mv;
 		
 }
-	@RequestMapping(value="/admin/addproduct", method=RequestMethod.POST)
+	@RequestMapping(value="admin/addproduct", method=RequestMethod.POST)
 	// public ModelAndView addProduct(@ModelAttribute("product") Product product, HttpServletRequest request){
 	 public ModelAndView addProduct(HttpServletRequest request, HttpServletResponse response){
 		CategoryModel category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
@@ -88,18 +77,27 @@ public class ProductsController {
 		product.setCid(category);
 		product.setSid(supplier);
 		productDao.save(product);
-		ModelAndView mv=new ModelAndView("stock");
+		ModelAndView mv=new ModelAndView("redirect:stock");
 		return mv;
 	 }
 	
-	@RequestMapping(value="/admin/deleteproduct", method=RequestMethod.GET)
-	public ModelAndView viewDelete(@RequestParam("id") int pid){
+	
+	
+	
+	
+	@RequestMapping(value="admin/deleteproduct", method=RequestMethod.GET)
+	public ModelAndView viewProductDelete(@RequestParam("id") int pid){
 		ModelAndView mv=new ModelAndView("redirect:stock","command",new ProductModel());
 		productDao.delete(pid);
 		mv.getModelMap().addAttribute("stock", productDao.findAll());
 		return mv;
 }
-	@RequestMapping(value="/admin/updateproduct", method=RequestMethod.GET)
+	
+	
+	
+	
+	
+	@RequestMapping(value="admin/updateproduct", method=RequestMethod.GET)
 	public ModelAndView viewUpdateProduct(Model model,@RequestParam("id") int pid){
 		ModelAndView mv=new ModelAndView("update");
 		ProductModel product=productDao.findById(pid);
@@ -108,7 +106,8 @@ public class ProductsController {
 		mv.getModelMap().addAttribute("supplier", supplierDao.findAll());
 		return mv;
 }
-	@RequestMapping(value="/admin/updateproduct", method=RequestMethod.POST)
+	
+	@RequestMapping(value="admin/updateproduct", method=RequestMethod.POST)
 	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 	public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv=new ModelAndView("redirect:stock");

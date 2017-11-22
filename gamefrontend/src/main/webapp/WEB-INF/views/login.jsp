@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <%@include file="header.jsp" %>
-<body>
- <style type="text/css">
+    
+
+    
+    <style type="text/css">
 	body{
     background-color: #525252;
 }
@@ -135,7 +137,7 @@
 						<form id="login" action="login" method="POST" role="form" style="display: block;">
 									
 									<div class="form-group">
-										<input type="username" name="username" id="email" tabindex="1" class="form-control" placeholder="Email Id" value="">
+										<input type="email" name="username" id="email" tabindex="1" class="form-control" placeholder="Email Id" value="">
 									</div>
 																		
 									<div class="form-group">
@@ -158,7 +160,24 @@
 </div>
 </div>
 
-
+<!-- <script type="text/javascript">
+$(function() {
+    $('#login-form-link').click(function(e) {
+		$("#login-form").delay(100).fadeIn(100);
+ 		$("#register-form").fadeOut(100);
+		$('#register-form-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+	$('#register-form-link').click(function(e) {
+		$("#register-form").delay(100).fadeIn(100);
+ 		$("#login-form").fadeOut(100);
+		$('#login-form-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+});
+</script> -->
 <%@include file="footer.jsp" %>
 </body>
 </html>

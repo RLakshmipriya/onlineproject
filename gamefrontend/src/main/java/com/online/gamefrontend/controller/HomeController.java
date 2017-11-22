@@ -23,17 +23,7 @@ public class HomeController {
 	@Autowired
 	private ProductDao productDao;
 	
-	
-	/*@RequestMapping(value="/", method=RequestMethod.GET)
-	public ModelAndView index(){
-		ModelAndView mv=new ModelAndView("home");
-		return mv;
-	}*/
-	@RequestMapping(value="/home", method=RequestMethod.GET)
-	public ModelAndView showHome(){
-		ModelAndView mv=new ModelAndView("home");
-		return mv;
-	}
+
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView index(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv=new ModelAndView("home");
@@ -46,6 +36,16 @@ public class HomeController {
 		if(session!=null)
 		session.setAttribute("customer", customer);
 		//mv.getModelMap().addAttribute("customer", customer);
+		return mv;
+	}
+	@RequestMapping(value="/home", method=RequestMethod.GET)
+	public ModelAndView showHome(){
+		ModelAndView mv=new ModelAndView("home");
+		return mv;
+	}
+	@RequestMapping(value="admin/home", method=RequestMethod.GET)
+	public ModelAndView showAdminHome(){
+		ModelAndView mv=new ModelAndView("redirect:stock");
 		return mv;
 	}
 	

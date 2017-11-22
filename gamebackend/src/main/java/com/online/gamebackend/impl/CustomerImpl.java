@@ -52,6 +52,21 @@ private SessionFactory sessionFactory;
 			return null;		
 		
 	}*/
+		public CustomerModel findById(String email) {
+			List results = null;
+			Session session=sessionFactory.openSession();
+			String hql = "FROM Customer C WHERE C.email = '" + email + "'" ;
+			Query query = session.createQuery(hql);
+			
+			results = query.list();
+			if(results!=null)
+				return (CustomerModel) results.get(0);
+			
+			else
+				return null;	
+			
+		}
+
 		public CustomerModel findByEmail(String email,String password) {
 			// TODO Auto-generated method stub
 			List results = null;
@@ -81,17 +96,13 @@ private SessionFactory sessionFactory;
 		}
 
 
-		public CustomerModel findById(String id) {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-
 		public void delete(int id) {
 			// TODO Auto-generated method stub
 			
 		}
 
+
+		
 
 
 
