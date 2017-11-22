@@ -45,7 +45,7 @@ public class CartController {
 	
 	@RequestMapping(value="/addToCart", method=RequestMethod.GET)
 	public ModelAndView getProductById(Model model,@RequestParam("id") int pid, @RequestParam("txtQuantity") int quantity, HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mv=new ModelAndView("redirect:products");
+		ModelAndView mv=new ModelAndView("cart");
 		ProductModel product =productDao.findById(pid);
 		HttpSession session=request.getSession(false);
 		Cart cart=null;
@@ -72,18 +72,24 @@ public class CartController {
 	}
 	@RequestMapping(value="/deleteitem", method=RequestMethod.GET)
 	public ModelAndView getDeleteById(Model model,@RequestParam("id") int pid, HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mv=new ModelAndView("redirect:products");
+		ModelAndView mv=new ModelAndView("redirect:cart");
 		ProductModel product =productDao.findById(pid);
 		HttpSession session=request.getSession(false);
 		Cart cart=null;
 		if(session!=null){
 			cart=(Cart) session.getAttribute("cart");
 			CartItem item=new CartItem();
+			try {
 			for(CartItem c : cart.getItems()){
 				if(c.getProduct().getPname().equals(product.getPname())){
 					item=cart.getItems().set(c.getId(), c);
 					cart.getItems().remove(item);					
 				}
+			}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
 			}
 		}
 		//cart.getItems();	
@@ -91,5 +97,8 @@ public class CartController {
 		return mv;
 	
 	}
+	
+
 
 }
+		
